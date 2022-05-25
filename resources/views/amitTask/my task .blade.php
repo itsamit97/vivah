@@ -615,11 +615,15 @@ current state add crete from & table
 	in recently view my profile
 8.double show double data error problem	
 
+============24-05-2022===============
+1.testing code
+2.hide buttons
+3. incomming request add 2 buttons 1.accept btn && reject btn
+4. accept button when bride && groom send proposal or when bride groom aceept proposal 
+6.error
+5.github install && seting 
 
-
-
-
-
+6.error
 
 
 

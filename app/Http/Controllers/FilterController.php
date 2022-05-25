@@ -134,13 +134,13 @@ class FilterController extends Controller
             $groomProfilId  = GroomProfile::where('groom_profile_id',Auth::User()->groom_profile_id)->select('id','first_name','first_name','last_name')->first();
              $proposalRequestTbl = new ProposalRequest;
             if(Auth::User()->role == 2){
-                // $isProposalExist = ProposalRequest::where('proposed_to',$groomProfilId->id)
-                // ->where('proposed_to_role',Auth::User()->role)
-                // ->select('proposel_status')
-                // ->first();
-                // if(isset($isProposalExist->proposel_status) == 1){
-                //      return json_encode(['msg'=>'already Friend...','status'=>200]);
-                // }
+                $isProposalExist = ProposalRequest::where('proposed_to',$groomProfilId->id)
+                ->where('proposed_to_role',Auth::User()->role)
+                ->select('proposel_status')
+                ->first();
+                if(isset($isProposalExist->proposel_status) == 1){
+                     return json_encode(['msg'=>'already Friend...','status'=>200]);
+                }
                  //START - check if proposal request is already sent
                 $isReqExist = ProposalRequest::where('proposed_by_groom',$groomProfilId->id)
                 ->where('proposed_by_role',Auth::User()->role)
@@ -174,9 +174,9 @@ class FilterController extends Controller
                 ->select('proposel_status')
                 ->first();
                 // dd('isProposalExist',$isProposalExist);
-                // if($isProposalExist->proposel_status == 1){
-                //     return json_encode(['msg'=>'alreadyvvvvv Friend...','status'=>200]);
-                // }
+                if($isProposalExist->proposel_status == 1){
+                    return json_encode(['msg'=>'alreadyvvvvv Friend...','status'=>200]);
+                }
                 //START - check if proposal request is already sent
                 $isReqExist = ProposalRequest::where('proposed_by_bride',$brideProfilId->id)
                 ->where('proposed_by_role',Auth::User()->role)

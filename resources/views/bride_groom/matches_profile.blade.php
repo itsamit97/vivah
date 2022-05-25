@@ -235,27 +235,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                      <div class="thumb">
                         <a onClick="cancelRequest({{$value}})" class="photo_view cancel_request{{$value->id}}" style="display: none">Cancel Request</a>
 
