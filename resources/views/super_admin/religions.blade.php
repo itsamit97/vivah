@@ -7,12 +7,12 @@
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800">{{ucwords(str_replace("_", " ",request()->segment(count(request()->segments()))))}}</h1>
-		<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#myModal">Fill Religion</a>
+		<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#religionModel">Add Religion</a>
 	</div>
 	<!-- Start Religion Table ----------->
     <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Religion</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -21,7 +21,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>Religion</th>
-                                <!-- <th>Delete</th> -->
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +30,7 @@
                             <tr>
                             	<th>{{$i}}</th>
                                 <th>{{$value->religion}}</th>
+                                 <th><a href="{{route('destroy_religion',['id'=>$value->id])}}" onclick="return confirm('Are You Sure Destroy This Religion?')" class='fa fa-trash'></a></th>
                             </tr>
                                @php $i++ @endphp 
                             @endforeach
@@ -42,7 +43,7 @@
         </div>
 	<!--------- End Religion Table --------->
 	<!--Start  Religion  Modal -->
-	<div class="modal" id="myModal">
+	<div class="modal" id="religionModel">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<!-- Modal Header -->
@@ -75,7 +76,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End bootsrap model -->
+	<!-- End Religion model -->
 </div>
 	<!-- End of Main Content -->
 @stop

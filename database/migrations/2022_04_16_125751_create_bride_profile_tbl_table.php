@@ -48,13 +48,21 @@ class CreateBrideProfileTblTable extends Migration
             $table->string('weight')->nullable();
             $table->string('height')->nullable();
             $table->string('physical_status')->nullable();
-            $table->string('blood_group')->nullable();
+            $table->string('blood_group_tbl_id')->nullable();
             $table->string('drink')->nullable();
             $table->string('smoke')->nullable();
             $table->string('highest_qualification')->nullable();
             $table->string('passout_year')->nullable();
             $table->string('studied_from')->nullable();
             $table->string('occupation')->nullable();
+
+            $table->string('self_introduce')->nullable();
+            $table->string('employed_in')->nullable();
+            $table->string('annual_income')->nullable();
+            $table->string('organization_name')->nullable();
+
+
+
             $table->timestamps();
         });
     }
@@ -69,5 +77,4 @@ class CreateBrideProfileTblTable extends Migration
         Schema::dropIfExists('bride_profile_tbl');
     }
 }
-
 

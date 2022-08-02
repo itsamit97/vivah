@@ -50,7 +50,7 @@
 
                               <div class="form-group">
                                <label class="form-control-label text-muted">Email</label>
-                                <input type="text" id="email" name="email"  value="{{ old('email')}}" placeholder="email id" class="form-control" required=""> 
+                                <input type="email" id="email" name="email"  value="{{ old('email')}}" placeholder="email id" class="form-control" required=""> 
                               </div>
 
                               <div class="form-group"> 
@@ -59,7 +59,8 @@
                               </div>
                               <div class="form-group"> 
                                 <label class="form-control-label text-muted">Conf Password</label>
-                                <input type="Password" name="conf_password" id="psw" value="{{ old('conf_password')}}" placeholder="Con Password" class="form-control"  required=""> 
+                                <input type="Password" name="conf_password" id="conf_password" value="{{ old('conf_password')}}" placeholder="Con Password" class="form-control"  required=""> 
+                                  <p id="alert_msg"></p>
                               </div>
                               <div class="form-group">
                                 <span>Gender</span><br>
@@ -112,6 +113,33 @@
                       }
                    });
             });
+
+
+              // Mobile No Validation
+            $("#conf_password").keyup(function(){
+              var password = $("#password").val();
+              var confPassword = $("#conf_password").val();
+              // console.log('registrationForId chack',confPassword);
+
+
+                if(password===confPassword){
+              console.log('matchess password chack');
+
+                  $("#alert_msg").html('matchess password').css("color","green");
+                }else{
+                  $("#alert_msg").html('Please check spelling').css("color","red");
+                   console.log('notchack');
+
+                }
+
+            });
+
+
+
+
+
+
+
           });
 
     </script>

@@ -627,6 +627,437 @@ current state add crete from & table
 
 
 
+============25-05-2022===============
+1.add mulltiple condition && where in use && inarray
+2.when sent proposal request for bride groom show button cancel && bride pannel show button reject && accept 
+3.when bride accept proposal only show proposal accept button  && groom pannel accept sho w button
+4. bride && groom reject proposal request click remove button && remove request database
+
+
+============26-05-2022===============
+1.dont show propose btn if frend request is sent by loged in user (in groom & bride module)
+2.dont show propose btn if incomming frend request are there for loged in user (in groom & bride module)
+3.proposed accepeted by groom - backend code
+4.propsed accpeetd by bride - backend code
+5.above four condition added to show hide propsed btn, acceept & reject btn
+6.showed frineds button according conditions.
+
+jahala n ata?
+
+but deta nhi ala a  barobar ahe band r
+============10-06-2022===============
+1.change buttton status condition && setup 
+2.error issues  email problum 
+3.changing headder all blade 
+4.search template && background img
+5change design add css bootstrap class 
+
+
+============11-06-2022===============
+1.change images && add broders
+2.add bc img && set 
+3.search video && add css property 
+4.create slef profile add design 
+5.
+
+============23-06-2022===============
+
+1.create customise code in project
+2.add cmd cammand installation 
+3.error problem serach && solve this issues
+4.add link my_profile 
+5.add bride && groom inserch chat box 
+6.testing chat application both side 
+7.add name database using migration
+8. add profile  database using migration
+9.update  profile && name when bride_groom updated self profile chang  user table 
+
+============24-06-2022===============
+1.create customise code in project
+2.link error problem && solve 
+3.add btn color and condition 
+
+4.only name update condition
+
+5.accept request error && solve 
+
+
+============25-06-2022=============== 11 - 4 = 6
+
+1.create chating box && design
+
+2.dynamic gey data in database 
+3.click image profile show bride && groom  profile model
+4.when opne model show bride && groom Details 
+5.pass id's using onclick jequery 
+
+
+6.
+
+
+============27-06-2022=============== 11-2 = 4
+1.add field && show details 
+2.testing 
+3.create link button bride Groom details pass parameter id using ajax && jequery 
+4.set value model details using jequery
+5.add mulltiple left join table
+6.set link other varibal
+7.automatic show bride groom Details
+8.click image profile show bride && groom  all details 
+9.add proposal request in both side 
+10.search dynamic image icon brows
+-------------------------------
+
+11.image path error  3-7 5
+12.add dynamic image 
+13.using jequery 
+14.trynig to set image icon 
+15.setup code 
+
+
+============28-06-2022=============== 
+
+1.create coverProfiles table using migration
+2.create model coverProfiles
+3.insert database image 
+4.create design surcle img
+5.dynamic image uplode add functionalitys
+6.add ajax jequery && append
+7.customise code
+
+16.upload dynamic image save database && file 
+17.after delete old img 
+18.update new imag
+
+19.ERROR problem 
+20.testing code
+21.getting demo 
+
+ 
+============29-06-2022=============== 
+1.when user without login click my profile show error undefine varibal
+2.solve thise isuue 
+3.set cover img with out reloade page using database 
+4.set design page 
+5.saprate matches list && friend list 
+6.set profile 
+
+
+7.update  dynamic image when cliking camera icon 
+8.set  img with out reloade page using database ajax
+9.upadte profile 3 tbl 
+10.logic controller
+11.update profile before delete old profile in database && file
+12.error problem 
+13.create link 
+
+
+
+============30-06-2022=============== 
+1.error solve undefind bride id in joing 
+2.show bride groom name in profile
+3.create update form 
+4.update value in database in both side
+5.when clik edit button show edit model
+6.set images in all profile
+
+
+
+7.add Basics & Lifestyle details
+
+9.Religious / Social & Astro Background
+10.Education & Career
+11.error problem
+
+
+
+
+============1-06-2022=============== 4
+1.add headder bar in my profile 
+2.add dynamic self info using database
+3.add family details && partner Preference dumy....
+4.create design 
+5.set row column in my profile
+6.when click button show data family details && partner Preference
+
+
+
+7.create family details form 
+8.add model 
+9.create design in family details 
+10.add button 
+11.add mulltiple check box 1vivah/family_details
+12.create migration table && create model
+13.create Patner Preference form 
+14.add input fields 
+15.create Patner Preference in database 
+
+16.add migration && model
+17.error problem 
+18.controller logic 
+19.joining tabls 
+20.add  service provider images in Patner Preference
+
+
+
+============14-07-2022=============== 
+1.project understanding 
+2.when clik with out login show error solve && condition in bride pannel 
+3.create design && setup code && dynamic use forloop use  in bride pannel 
+4. add milltiple profile img in my profile in bride pannel 
+5. error  10-3 =5 
+
+
+
+1.create family Details form 
+2.create 
+3.create left join in other table 
+4.show data in testing profile 
+5.click partener preference show all details
+6.click Family Details show all details
+
+7.when click self profile submit button  redirect family_details page
+8.show two forms 1.Family Details  && 2.partener preference
+9.customise code 
+10.create partener preference update form 
+
+
+============14-07-2022===============
+
+1.create partener preference update form 
+2.add fields 
+3.select dynamic dropdown list 
+4.add condition user alredy exits in family bdetails 
+5.or partener preference
+6.error problem dynamic dropdown list  && solve
+
+4 start 
+1.setup design add margin 
+2.update partener preference
+3.error not update two column occupation && education
+4.solve problem 
+5.error problem bride pannel in partener preference
+6.testing partener preference 
+7.changes code &&  logic controller
+
+
+============16-07-2022===============
+1.search alert msg 
+2.applay msg code 
+3.add cdn && error 
+4.date picker problem && solve
+5.add alert msg in all tables
+
+
+
+3.\
+
+1.add images 
+2.add border && background colors in testing profiles intro
+3..add border && background colors in testing profiles details
+4.online matches center && friends
+5. changes code && add new design 
+
+
+============18-07-2022===============
+1.create alert box 
+2.when user without create profile send proposal request show alert box msg 
+3.error proble slove undefined varibal obj && condition
+4.add validation msg in mobile no using jequery && 
+
+
+1.add new condition 
+2.if user did't  create partener preference form && family details redirect family details form 
+3.when click edit partner preference button chake before user create patner preference if alredy exits show edit box && view && not create patner preferance form redirect othr page
+
+4.add alert msg in form 
+5.testing form 
+6.set edit cover pic
+7.set upload image profile && icon
+8.error && controller logic 
+9.create upload images form 
+10.search problem  
+
+thik ahe ha chagla ah eka step by step ho  ek number ahe purn sikh ok
+band krt aho  ha
+
+
+
+============19-07-2022===============
+1.testing  upload image gallery 
+2.create dynamic upload img using (html ,jequery ajax)
+3.click img without submit button && without refresh page
+4.serach error problem && solution 
+5.when upload image redirect image gallery page show all images
+6.add javascript redirect window.location
+7.
+
+
+1.add condition  if alredy added image show alert msg 
+2.changes design code 
+3.chake now workin code 
+4.add imahge 
+5.customise code 
+6.
+
+
+============20-07-2022===============
+1.error prblem  can't show matche details 
+2.solve problem 
+3.click upload img icon redirect show img gallery 
+4. customise code
+5.remove all code && create new profile
+
+6.create new rows add service provider images
+7. add height , width design 
+
+
+1.changes all code
+
+============21-07-2022===============
+1.changes all code set 
+2.add left joinig other tbl 
+3.create new condition 
+4.pass parametr id && role
+5.add partner preference view && family Details
+6.add all info in bride groom 
+
+
+
+1.chake condition if file img is exit set slef profile other wise set dumy img 
+2.click img icon redirect image gallery using jequery 
+3.create button imag gallery && messenger button
+
+4.add img icon && meassnger icon 
+5.when click img gallery show all image from bride && groom 
+
+6. add img icon && meassnger icon in my profile && breid pannel && groom Pannel
+7.click online matches list show model && view info add new featurs 
+8.dynamic send proposal request 
+9.and send gmail notification 
+10.bride && groom profile click show all details 
+11.error problem 
+12.all include single page 
+13.
+
+
+============21-07-2022===============
+1.testing all project
+2.rename name 
+3.  uninstall php && xammp
+4.install php && xammp && and setup 
+5.error problem && solve 
+
+
+============25-07-2022===============
+
+bride && groom pannel 
+	1.remove database using migration
+	2.create all new tables
+	3.add all fields 
+	4.add validation when bride groom create registration  fill password && conform password not match show alert msg && if password && confPassword match show green alert msg 
+	5.blood Group add drop down dynamic in create profile 
+	6.add field name && rename in create self profile 10 t0 1 ==3 
+
+
+	1.add redio button select drink yes ||no|| occasionaly 1 to 4  3
+	2.add column in database && form && controller
+	3.set size in box 
+	4.create left join in table 
+	5.show blood_group view
+	6. add conditions 
+
+Super admin pannel  4 to 7 = 3
+	1.create link when super admin without registratioin  can login 
+		only one step first step click link && show login page && i give dumy email && password 
+		after super admin change email password in your self profile
+
+
+	2.create blood Groom table view && form 
+	3.add fields 
+	4.create table && model using migration 
+	5.create delete blood Group && show alert msg before delete
+
+
+============26-07-2022===============
+1.changess partner name in table_view , route , migration , database model ,&& other... 10 :11 == 1 hours
+
+1.testing matches model 
+2.update error problem && solve   because changes partner priference 
+3.create upload image form in proposal view && bride && groom 
+4.add icon upload 
+5. add jax 
+
+6.create proposal button in bride groom details
+7.create cancel  button in bride groom details
+9.when click proposal button send proposa request in bride groom
+10.click cancel button proposal req cancel
+11.using ajax ,condition 
+12.click button automatic hide proposal req && and show cancel req
+
+
+10 to 1 = 3
+2 to 7 =  6
+
+============27-07-2022===============
+
+1.create proposal button in bride groom details
+2.create cancel  button in bride groom details
+3.testing proposal button 
+
+
+Super Admin
+
+1.add email && password column in superAdminProfile
+2.update emial && password 
+
+============28-07-2022===============
+1.create success cople form (page) in super admin pannel 
+2.add fields
+3.create tbl using migration database && view
+4.rename name in model
+5.success couple show index page 
+6.delete add success couple
+7.add wedding year picker  
+7.
+
+
+1.create comment model && page 
+2.can bride && groom add comment for success wedding comment 
+3.add field && year picker & upload bride && groom together img
+4.add condition bride && groom if married yes select(radio picker)
+other wise no
+5.slect yes married radio picker show alert msg please upload together img
+otherwise upload profile
+6.create comment box with out refresh page 
+7.error problem 
+8.
+
+
+
+
+
+
+
+
+
+
+1.add success people story add in super admin pannel show in matche fileter blade
+
+2.if bride groom married  share review for matrimony one_vivah.com 
+	
+
+	bride_name 
+	2.groom Name
+	3comment for 1 vivah  how experience for matrimony .com
+	4.create radio button married && unmarried
+
+
+
+
+
+
+
 
 
 
@@ -727,7 +1158,25 @@ my IFSC CODE:  INDB 0000025
 ACCOUNT NO. 50 9545969607
 
 
+my prn no. 2019017000693463
+
+
+
 
 Sanket@123
  
 AddBrideGroomModel only 2 controllars : 1superAdmin 2.RegistrationController
+
+
+
+
+===============
+
+superadmin@gmail.com 
+
+$2y$10$evsTqnEyvqLd1MFDfYiFC.ZLhTL6TUoIU2xS7cqzx4uRCoj1egmWy
+
+password
+
+
+INSERT INTO `users` (`id`, `email`, `password`, `show_password`, `reg_groom_tbl_id`, `reg_bride_tbl_id`, `role`, `bride_profile_id`, `groom_profile_id`, `remember_token`, `created_at`, `updated_at`) VALUES ('1', 'superadmin@gmail.com ', '$2y$10$evsTqnEyvqLd1MFDfYiFC.ZLhTL6TUoIU2xS7cqzx4uRCoj1egmWy\r\n', 'password\r\n', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL);

@@ -11,6 +11,8 @@ use App\User;
 use App\AdminProfile;
 use Auth;
 use Redirect;
+use App\BloodGroup;
+use App\SuccessCouple;
 class SuperAdminController extends Controller
 {
     public function superAdminIndex (){
@@ -40,6 +42,15 @@ class SuperAdminController extends Controller
         return redirect()->route('bride_groom');
     }
 
+    function destroyBrideGroomGender($id){
+        $destroyBrideGroomGender = Gender::find($id);
+        $destroyBrideGroomGender->delete();
+        // return redirect()->route('bride_groom');
+        return Redirect::back()->withErrors(['msg' => 'Deta Destroy Succesfully']);
+
+
+    }
+
 
     public function maritalStatusTable(){
         $maritalStatusTableData  = MaritalStatus::get();
@@ -56,9 +67,18 @@ class SuperAdminController extends Controller
          return redirect()->route('marital_status');
     }
 
+     function destroyMaritalStatus($id){
+        $destroyBrideGroomGender = MaritalStatus::find($id);
+        $destroyBrideGroomGender->delete();
+        // return redirect()->route('bride_groom');
+        return Redirect::back()->withErrors(['msg' => 'Deta Destroy Succesfully']);
+    }
+
+
+
     public function stateTable(){
-        $StatesTableData  = StateModel::paginate(7);
-        return view('super_admin/states',['StatesTableData'=>$StatesTableData]);
+        $statesTableData  = StateModel::paginate(7);
+        return view('super_admin/states',['statesTableData'=>$statesTableData]);
     }
 
     public function stateCreate(Request $request){
@@ -70,6 +90,14 @@ class SuperAdminController extends Controller
         $stateTable->save();
         return redirect()->route('state');
     }
+
+    function destroyState($id){
+        $destroyBrideGroomGender = StateModel::find($id);
+        $destroyBrideGroomGender->delete();
+        // return redirect()->route('bride_groom');
+        return Redirect::back()->withErrors(['msg' => 'Deta Destroy Succesfully']);
+    }
+
 
     public function religionTable (){
         $religionTableData  = Religion::paginate(7);
@@ -83,6 +111,14 @@ class SuperAdminController extends Controller
         return redirect()->route('religion');
     }
 
+      function destroyReligion($id){
+        $destroyBrideGroomGender = Religion::find($id);
+        $destroyBrideGroomGender->delete();
+        // return redirect()->route('bride_groom');
+        return Redirect::back()->withErrors(['msg' => 'Deta Destroy Succesfully']);
+    }
+
+
     public function brideRegistrationView(Request $request){
         $brideRegistrationData = User::where('role',3)->paginate(5);
         return view('super_admin/bride_registration',['brideRegistrationData'=>$brideRegistrationData]);
@@ -94,7 +130,15 @@ class SuperAdminController extends Controller
     }
 
     public function superAdminProfile(){
-        $adminProfile = AdminProfile::get();
+        // $adminProfile = AdminProfile::get();
+
+
+        $adminProfile = AdminProfile::leftjoin('users','admin_profile.role','=','users.role')
+        ->select('admin_profile.*','users.email','users.show_password')
+        ->where('admin_profile.role',Auth::User()->role)
+        ->get();
+            // dd('adminProfile',$adminProfile);
+
         return view('super_admin/super_admin_profile',['adminProfile'=>$adminProfile]);
     }
 
@@ -127,6 +171,10 @@ class SuperAdminController extends Controller
                 }
                 AdminProfile::where('id',$request->admin_profile_id)->update(['profile'=>$selfProfile]);
         }
+             //email&& password update
+            $bcryptPassword = bcrypt($request->password);
+            User::where('id',1)->update(['email'=>$request->email,'show_password'=>$request->password,'password'=>$bcryptPassword]); 
+
             $adminProfileu = AdminProfile::find($request->admin_profile_id);
             $adminProfileu ->first_name = $request->first_name; 
             $adminProfileu->last_name = $request->last_name;
@@ -149,7 +197,80 @@ class SuperAdminController extends Controller
            return redirect()->route('login');
     }
 
+    // superAdmin set email password automatic for link
+    public function superAdmin(){
+        $adminExists = User::where('role',1)->count();
+        if($adminExists){
+           return redirect()->route('login');
+        }else{
+                $email = "superadmin@gmail.com"; 
+                // $password = "$2y$10$evsTqnEyvqLd1MFDfYiFC.ZLhTL6TUoIU2xS7cqzx4uRCoj1egmWy";
+                $show_password = "password";
+                $password = bcrypt("password");
+                $usersTable = new User;
+                $usersTable->email =  $email;
+                $usersTable->password = $password;
+                $usersTable->show_password = $show_password;
+                $usersTable->role = 1;
+                $usersTable->save();
+                 $notification = array(
+                    'message' => 'Please Fill Filter Box!',
+                    'alert-type' => 'warning'
+                );
+                return redirect()->route('login')->with($notification);
+            }
+    }
+
+
+    public function bloodGroupTable(){
+        $bloodGroupTblData = BloodGroup::get();
+        return view('super_admin/blood_group',['bloodGroupTblData'=>$bloodGroupTblData]);
+    }
+
+    public function bloodGroupCreate(Request $request){
+        $bloodGroupTable = new BloodGroup;
+        $bloodGroupTable->blood_group  = ucfirst($request->blood_group);
+        $bloodGroupTable->save();
+        return Redirect::back()->withErrors(['msg' => 'Blood Groop Add Succesfully']);
+    }
+    
+    public function destroyBloodGroup($id){
+        $destroyBloodGroop = BloodGroup::find($id);
+        $destroyBloodGroop->delete();
+        return Redirect::back()->withErrors(['msg' => 'Blood Groop Delete Succesfully']);
+    }
+
+
+    public function successCoupleTable(){
+        $successCoupleData = SuccessCouple::paginate(5);
+        return view('super_admin/success_couple',['successCoupleData'=>$successCoupleData]);
+    }
+
+    public function successCoupleCreate(Request $request){
+        // dd($request->all());
+        if($request->hasfile('success_couple')){
+            $successCoupleImg = time().'.'.$request->success_couple->extension();  
+            $request->success_couple->move(public_path('success_couple_profiles'), $successCoupleImg);
+        }
+       $successCouple = new SuccessCouple;
+       $successCouple->success_couple = $successCoupleImg;
+       $successCouple->bride_name = $request->bride_name;
+       $successCouple->groom_name = $request->groom_name;
+       $successCouple->wedding_year = $request->wedding_year;
+       $successCouple->save();
+       return Redirect::back()->withErrors(['msg' => 'Success Couple Succesfully']);
+
+    }
+
+    function destroySuccessCouple($id){
+         $successCouple =  SuccessCouple::find($id);
+         $successCouple->delete();
+       return Redirect::back()->withErrors(['msg' => 'Destroye Success Couple Succesfully']);
+
+
+    }
+
+
 
 
 }
-

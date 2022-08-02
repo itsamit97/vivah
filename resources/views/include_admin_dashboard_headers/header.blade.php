@@ -22,6 +22,12 @@
 
     <!-- fa fa delete icon cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- End fa fa delete icon cdn -->
+
+    <!-- start year picker cdn css -->
+         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- end start year picker cdn -->
+
     <style type="text/css">
         thead{
             color:black;
@@ -37,14 +43,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">1 Vivah </div>
-            </a>
-
+        <div><img src="{{asset('web_assets/images/bc_images/1vivahlogoa.jpg')}}" style="height:73px; width:255px;"></img></div>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -78,6 +77,20 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Religion Table</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('blood_group')}}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Blood Group Table</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('success_couple')}}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Success Couple</span></a>
+            </li>
+
+            
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('bride_registration')}}">
@@ -366,14 +379,49 @@
                             $adminProfile = DB::table('admin_profile')->select('profile','first_name','last_name')->first();
                        ?>
 
+
                         <!-- Nav Item - User Information -->
+                        @if($adminProfile)
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{$adminProfile->first_name}} - {{$adminProfile->last_name}}</span>
                                 <img src="{{asset('profiles/'.$adminProfile->profile)}}" style="height:40px; border-radius:50%;">
                             </a>
+                           @else
+                           
+                            <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img src="{{asset('profiles/1652448090.jpg')}}" style="height:40px; border-radius:50%;">
+                            </a>
+                          
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{{route('index')}}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                   1 Vivah Dashboard
+                                </a>
+                                <a class="dropdown-item" href="{{route('super_admin_profile')}}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Admin Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
 
+                           
+                            @endif
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">

@@ -127,11 +127,11 @@ body a{
     top: 11px;
 }
 .navbar-inverse-blue .navbar-inner {
-  padding:30px 0;
+  padding:10px 0;
   background:#c32143;
   border:none;
   font-size: 0.85em;
-    position: fixed;
+    /*position: fixed;*/
   top: 0;
   width: 100%;
 
@@ -535,7 +535,7 @@ input#submit-btn {
     border-top: solid 2px #e1dddd;
 }
 .grid_1{
-	padding:5em 0;
+	padding:0em 0;
 }
 .grid_1 h1, .grid_2 h2{
 	text-align: center;
@@ -1217,6 +1217,16 @@ td.day_label {
     width: 100%;
     padding: 0;
     margin-bottom: 2em;
+}
+.nav-tabs2 {
+    display: inline-block;
+    border-bottom: none;
+    font-weight: 500;
+    background-color:#ffa417;
+    /*width: 100%;*/
+    padding: 0;
+    margin-bottom: 2em;
+    width: 950px;
 }
 .nav-tabs1>li.active>a, .nav-tabs1>li.active>a:focus, .nav-tabs1>li.active>a:hover {
     color: #fff;

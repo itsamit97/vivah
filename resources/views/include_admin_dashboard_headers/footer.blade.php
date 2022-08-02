@@ -57,6 +57,28 @@
     <script src="{{asset('admin_assets/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('admin_assets/js/demo/chart-pie-demo.js')}}"></script>
 
+    <!-- start year picker cdn .js-->
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- start year picker cdn.js-->
+
+    <script type="text/javascript">
+        // new add datepicker
+            $(function() {
+              $('input[name="wedding_year"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'),10)
+              }, function(start, end, label) {
+                var years = moment().diff(start, 'years');
+                alert("You're wedding"+" " + years + " years completed!");
+              });
+            });
+
+    </script>
+
 </body>
 
 </html>

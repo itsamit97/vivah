@@ -1,0 +1,1140 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 22, 2022 at 08:18 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `one_vivah`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_profile`
+--
+
+CREATE TABLE `admin_profile` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin_profile`
+--
+
+INSERT INTO `admin_profile` (`id`, `first_name`, `last_name`, `profile`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'amit', 'ramteke', '1652517771.jpg', '1', '2022-05-13 07:53:07', '2022-05-14 03:12:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bride_profile_tbl`
+--
+
+CREATE TABLE `bride_profile_tbl` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '3 bride',
+  `reg_bride_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '3 bride',
+  `bride_profile_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '3 bride',
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `middle_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birthday` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `age` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_state_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `manglik` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `religion_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cast` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_tounge` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_cast` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gotra` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_state_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `proof_identity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prposal_status` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `proof_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `complexion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `weight` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `height` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `physical_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `drink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `smoke` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `highest_qualification` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `passout_year` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `studied_from` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bride_profile_tbl`
+--
+
+INSERT INTO `bride_profile_tbl` (`id`, `role`, `reg_bride_tbl_id`, `bride_profile_id`, `first_name`, `middle_name`, `last_name`, `marital_status_tbl_id`, `birthday`, `age`, `birth_state_tbl_id`, `birth_city`, `birth_name`, `birth_time`, `email`, `mobile_no`, `manglik`, `religion_tbl_id`, `cast`, `mother_tounge`, `sub_cast`, `gotra`, `country`, `current_state_tbl_id`, `current_city`, `proof_identity`, `prposal_status`, `proof_address`, `profile`, `body_type`, `complexion`, `weight`, `height`, `physical_status`, `blood_group`, `drink`, `smoke`, `highest_qualification`, `passout_year`, `studied_from`, `occupation`, `created_at`, `updated_at`) VALUES
+(1, '3', '1', '887251', 'sonali hg', '--', 'routh', '1', '04/10/1996', '26', '5', 'Nagpur', 'amit', '1:10 AM', 'sonali@gmail.com', '9975439948', 'manglik_no', '4', 'mahar', 'marathi', 'mahar', 'i dont know', 'india', '5', 'Nagpur', '1651660922.jpg', NULL, '1651660922.jpg', '1656582657.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'm-com', '2020', NULL, 'Software Professional', '2022-05-04 05:12:02', '2022-06-30 04:26:10'),
+(2, '3', '2', '539306', 'amrapali', '---', 'shende', '1', '07/25/1996', '25', '5', 'nagpur', 'amit', '4:16 PM', 'amrapali@gmail.com', '09975439948', 'manglik_no', '4', 'mahar', 'marathi', 'mahar', NULL, 'india', '5', 'Nagpur', '1651661235.jpg', NULL, '1651661235.jpg', 'download (2).jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019', NULL, NULL, '2022-05-04 05:17:15', '2022-06-24 02:23:38'),
+(14, '3', '6', '662380', 'harshita', '--', 'karlekar', '1', '06/11/1997', '25', '5', 'nagpur', 'harshita', '1:58 PM', 'harshita@gmail.com', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1657783974.jpg', NULL, '1657783974.jpg', 'download (2).jpg', 'slim', 'fair', '45kg', '5fit', 'good', 'ab+', 'no', 'no', 'm-com', '2020', 'nagpur', 'teacher', '2022-07-14 02:02:54', '2022-07-14 02:02:54'),
+(18, '3', '7', '104520', 'kajal', '--', 'ramteke', '1', '01/31/1980', '42', '2', 'nagpur', NULL, '12:41 PM', 'kajal@gmail.com', '9545969607', NULL, '2', NULL, 'marathi', NULL, NULL, 'india', '3', 'nagpur', '1657959121.webp', NULL, '1657959121.jpg', 'download (5).jpg', 'fat', 'fair', '45kg', NULL, NULL, NULL, NULL, NULL, 'm-com', '2024', 'nagpur', 'teacherdsd', '2022-07-16 02:42:01', '2022-07-16 03:28:54'),
+(19, '3', '8', '287146', 'ruchita', 'MMMM', 'ramteke', '1', '06/17/1993', '29', '5', 'nagpur', 'ruchita', '9:53 PM', 'ruchita@gmail.com', '2222222222', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1658129227.webp', NULL, '1658129227.jpg', '1658130227.jpg', 'slim', 'fair', '45kg', '5fit', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-18 01:57:07', '2022-07-18 02:15:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ch_favorites`
+--
+
+CREATE TABLE `ch_favorites` (
+  `id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `favorite_id` bigint(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ch_favorites`
+--
+
+INSERT INTO `ch_favorites` (`id`, `user_id`, `favorite_id`, `created_at`, `updated_at`) VALUES
+(17029988, 3, 7, '2022-06-24 04:32:17', '2022-06-24 04:32:17'),
+(33466188, 7, 3, '2022-06-23 02:03:19', '2022-06-23 02:03:19'),
+(87690839, 7, 12, '2022-06-23 06:06:28', '2022-06-23 06:06:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ch_messages`
+--
+
+CREATE TABLE `ch_messages` (
+  `id` bigint(20) NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `from_id` bigint(20) NOT NULL,
+  `to_id` bigint(20) NOT NULL,
+  `body` varchar(5000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `attachment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seen` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ch_messages`
+--
+
+INSERT INTO `ch_messages` (`id`, `type`, `from_id`, `to_id`, `body`, `attachment`, `seen`, `created_at`, `updated_at`) VALUES
+(1681397017, 'user', 7, 3, 'hi', NULL, 1, '2022-06-23 05:42:42', '2022-06-23 05:43:43'),
+(1681857958, 'user', 2, 3, 'hi i am amit', NULL, 1, '2022-06-24 04:37:30', '2022-06-24 05:14:03'),
+(1694809856, 'user', 7, 12, '..', NULL, 0, '2022-06-23 06:07:25', '2022-06-23 06:07:25'),
+(1707195361, 'user', 3, 7, 'hi', NULL, 1, '2022-06-26 22:59:51', '2022-06-26 23:00:21'),
+(1757443655, 'user', 7, 7, 'fsdd', NULL, 1, '2022-06-21 23:01:50', '2022-06-21 23:05:24'),
+(1794769769, 'user', 7, 3, 'hi', NULL, 0, '2022-07-21 23:53:41', '2022-07-21 23:53:41'),
+(1865419695, 'user', 7, 21, 'hi', NULL, 0, '2022-07-22 00:27:47', '2022-07-22 00:27:47'),
+(1890970538, 'user', 7, 7, 'dd', NULL, 1, '2022-06-22 00:31:49', '2022-06-22 00:31:57'),
+(1896482726, 'user', 7, 3, 'hi', NULL, 0, '2022-07-16 07:23:54', '2022-07-16 07:23:54'),
+(1937292530, 'user', 7, 7, 'hello', NULL, 1, '2022-06-21 23:38:46', '2022-06-21 23:41:00'),
+(1941518680, 'user', 7, 3, 'hi', NULL, 1, '2022-06-24 05:20:15', '2022-06-24 05:20:19'),
+(1947402467, 'user', 2, 3, 'hi', NULL, 1, '2022-06-24 05:19:36', '2022-06-24 05:20:44'),
+(2004203387, 'user', 7, 3, 'hi', NULL, 0, '2022-07-21 06:26:07', '2022-07-21 06:26:07'),
+(2013261282, 'user', 7, 3, 'i am amit', NULL, 1, '2022-06-24 04:33:23', '2022-06-24 04:33:29'),
+(2018201672, 'user', 7, 12, 'hi', NULL, 0, '2022-07-21 23:47:23', '2022-07-21 23:47:23'),
+(2031138571, 'user', 7, 12, 'hi8', NULL, 0, '2022-07-22 00:12:44', '2022-07-22 00:12:44'),
+(2042451125, 'user', 7, 3, 'fdz', NULL, 1, '2022-06-23 01:29:51', '2022-06-23 02:01:53'),
+(2044599220, 'user', 7, 9, 'hi swity', NULL, 0, '2022-06-23 01:14:37', '2022-06-23 01:14:37'),
+(2108469710, 'user', 7, 3, 'k l', NULL, 1, '2022-06-24 04:33:50', '2022-06-24 04:33:58'),
+(2115943155, 'user', 7, 3, 'hi', NULL, 1, '2022-06-26 23:00:37', '2022-06-26 23:00:45'),
+(2145163484, 'user', 7, 12, 'how are u..', NULL, 0, '2022-06-23 06:06:55', '2022-06-23 06:06:55'),
+(2160562218, 'user', 7, 7, 'amit', NULL, 1, '2022-06-21 23:59:21', '2022-06-21 23:59:41'),
+(2166750106, 'user', 7, 3, 'hi', NULL, 0, '2022-07-21 23:45:43', '2022-07-21 23:45:43'),
+(2170245261, 'user', 3, 3, 'ssd', '{\"new_name\":\"c8604dee-8352-4277-b4d6-12d405f3825a.jpg\",\"old_name\":\"1652448090.jpg\"}', 1, '2022-06-21 06:13:40', '2022-06-21 06:13:54'),
+(2188756626, 'user', 7, 7, 'yutbut', NULL, 1, '2022-06-22 04:49:43', '2022-06-22 04:52:03'),
+(2190079219, 'user', 7, 9, 'hi', NULL, 0, '2022-06-22 23:33:48', '2022-06-22 23:33:48'),
+(2207165168, 'user', 7, 4, 'hello', NULL, 0, '2022-06-24 06:51:15', '2022-06-24 06:51:15'),
+(2247077276, 'user', 7, 3, 'hi', NULL, 1, '2022-06-24 04:31:10', '2022-06-24 04:32:10'),
+(2267683928, 'user', 7, 3, 'hello', NULL, 1, '2022-06-24 04:32:47', '2022-06-24 04:32:53'),
+(2275147989, 'user', 7, 12, 'hi', NULL, 0, '2022-07-21 06:24:24', '2022-07-21 06:24:24'),
+(2305849958, 'user', 7, 3, 'dd', NULL, 0, '2022-07-21 23:51:38', '2022-07-21 23:51:38'),
+(2310365482, 'user', 3, 3, 'hello i am sonali', NULL, 1, '2022-06-22 00:24:56', '2022-06-22 00:25:51'),
+(2334698486, 'user', 7, 12, 'hi ruchali', NULL, 0, '2022-06-23 06:06:36', '2022-06-23 06:06:36'),
+(2342439535, 'user', 3, 7, 'hello', NULL, 1, '2022-06-23 05:43:53', '2022-06-23 05:44:01'),
+(2343237675, 'user', 7, 12, 'hi', NULL, 0, '2022-07-21 23:46:16', '2022-07-21 23:46:16'),
+(2345447052, 'user', 3, 3, 'and u..', NULL, 1, '2022-06-22 00:25:02', '2022-06-22 00:25:51'),
+(2376790598, 'user', 7, 3, 'hi', NULL, 1, '2022-06-28 04:13:50', '2022-06-28 04:14:44'),
+(2377199460, 'user', 7, 7, 'hi', NULL, 1, '2022-06-21 23:01:55', '2022-06-21 23:05:24'),
+(2406258456, 'user', 7, 3, 'hi', NULL, 1, '2022-06-23 01:26:18', '2022-06-23 01:26:22'),
+(2414158280, 'user', 7, 12, 'hi', NULL, 0, '2022-06-24 23:19:44', '2022-06-24 23:19:44'),
+(2420667861, 'user', 7, 3, '', '{\"new_name\":\"f6b95ab4-09a6-44a4-a2f0-3e6829d34615.jpg\",\"old_name\":\"download.jpg\"}', 1, '2022-06-23 02:08:40', '2022-06-23 02:34:17'),
+(2430263212, 'user', 3, 7, 'hi', NULL, 1, '2022-06-28 04:26:06', '2022-06-28 04:26:11'),
+(2438929958, 'user', 24, 7, 'hi', NULL, 1, '2022-07-17 23:08:37', '2022-07-21 23:46:55'),
+(2439700788, 'user', 7, 21, 'hi', NULL, 0, '2022-07-22 00:27:21', '2022-07-22 00:27:21'),
+(2455394671, 'user', 7, 7, 'hi', NULL, 1, '2022-06-22 04:06:40', '2022-06-22 04:07:00'),
+(2465308420, 'user', 3, 7, 'by', NULL, 1, '2022-06-23 01:26:31', '2022-06-23 01:26:39'),
+(2469206822, 'user', 7, 3, 'hi sonali', NULL, 1, '2022-06-28 04:25:55', '2022-06-28 04:25:59'),
+(2503618580, 'user', 7, 24, 'hi', NULL, 0, '2022-07-21 23:47:02', '2022-07-21 23:47:02'),
+(2550399049, 'user', 2, 3, 'by', NULL, 1, '2022-06-24 05:20:31', '2022-06-24 05:20:44'),
+(2556462046, 'user', 7, 3, 'i am  ramteke', NULL, 1, '2022-06-24 04:37:52', '2022-06-24 04:37:55'),
+(2572600386, 'user', 3, 3, 'hello', NULL, 0, '2022-06-22 23:08:09', '2022-06-22 23:08:09'),
+(2650626011, 'user', 7, 3, 'lo', NULL, 1, '2022-06-24 04:33:56', '2022-06-24 04:33:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cover_profiles`
+--
+
+CREATE TABLE `cover_profiles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bride_groom_profile_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bride_groom_profile_role` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 Groom; 3:Bride',
+  `cover_profile` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cover_profiles`
+--
+
+INSERT INTO `cover_profiles` (`id`, `bride_groom_profile_id`, `bride_groom_profile_role`, `cover_profile`, `created_at`, `updated_at`) VALUES
+(2, '12', '2', '1656426691.jpg', '2022-06-28 08:58:00', '2022-06-28 09:01:31'),
+(3, '5', '2', '1658463605.jpg', '2022-06-28 23:40:47', '2022-07-21 22:50:06'),
+(4, '1', '3', '1656582661.jpg', '2022-06-30 00:40:32', '2022-06-30 04:21:01'),
+(5, '13', '2', '1657794457.jpg', '2022-07-14 04:57:37', '2022-07-14 04:57:37'),
+(6, '18', '3', '1657967507.jpg', '2022-07-16 05:01:43', '2022-07-16 05:01:47'),
+(7, '19', '3', '1658140543.jpg', '2022-07-18 02:10:30', '2022-07-18 05:05:43'),
+(8, '15', '2', '1658304302.jpg', '2022-07-20 02:35:02', '2022-07-20 02:35:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `family_details`
+--
+
+CREATE TABLE `family_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bride_groom_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bride_groom_role` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `family_member` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `family_income` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `family_details`
+--
+
+INSERT INTO `family_details` (`id`, `bride_groom_id`, `bride_groom_role`, `mother_occupation`, `father_occupation`, `family_member`, `family_income`, `state_id`, `city`, `created_at`, `updated_at`) VALUES
+(1, '5', '2', 'teacher', 'engineer', 'mother', 'Rs 1 Lakh', '2', 'nagpur', '2022-07-16 00:17:16', '2022-07-16 00:17:16'),
+(3, '15', '2', 'teacher', 'engineer', 'father,mother', 'Rs 1 Lakh', '5', 'nagpur', '2022-07-20 04:10:33', '2022-07-20 04:10:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genders`
+--
+
+CREATE TABLE `genders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bride_groom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `genders`
+--
+
+INSERT INTO `genders` (`id`, `bride_groom`, `gender`, `created_at`, `updated_at`) VALUES
+(1, 'Self - Male', 'male', '2022-05-02 00:28:33', '2022-05-02 00:28:33'),
+(2, 'Self - Female', 'female', '2022-05-02 03:08:51', '2022-05-02 03:08:51'),
+(3, 'Son', 'male', '2022-05-02 03:09:00', '2022-05-02 03:09:00'),
+(4, 'Sister', 'female', '2022-05-02 03:09:35', '2022-05-02 03:09:35'),
+(5, 'Brother', 'male', '2022-06-28 05:14:14', '2022-06-28 05:14:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groom_profile_tbl`
+--
+
+CREATE TABLE `groom_profile_tbl` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 groom',
+  `reg_groom_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 groom',
+  `groom_profile_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 groom',
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `middle_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birthday` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `age` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_state_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birth_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `manglik` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `religion_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cast` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_tounge` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sub_cast` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gotra` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_state_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `current_city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `proof_identity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `proof_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `complexion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `weight` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `height` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `physical_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `drink` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `smoke` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `highest_qualification` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `passout_year` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `studied_from` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `groom_profile_tbl`
+--
+
+INSERT INTO `groom_profile_tbl` (`id`, `role`, `reg_groom_tbl_id`, `groom_profile_id`, `first_name`, `middle_name`, `last_name`, `marital_status_tbl_id`, `birthday`, `age`, `birth_state_tbl_id`, `birth_city`, `birth_name`, `birth_time`, `email`, `mobile_no`, `manglik`, `religion_tbl_id`, `cast`, `mother_tounge`, `sub_cast`, `gotra`, `country`, `current_state_tbl_id`, `current_city`, `proof_identity`, `proof_address`, `profile`, `body_type`, `complexion`, `weight`, `height`, `physical_status`, `blood_group`, `drink`, `smoke`, `highest_qualification`, `passout_year`, `studied_from`, `occupation`, `created_at`, `updated_at`) VALUES
+(2, '2', '1', '631090', 'amitrt', 'mangal', 'ramteke', '1', '04/20/1950', '72', '5', 'nagpur', 'sanket', '5:29 PM', 'amit25@gmail.com', '09975439948', 'manglik_no', '4', 'mahar', 'marathi', 'mahar', 'i dont know', 'india', '5', 'Nagpur', '1651489192.jpg', '1651489192.jpg', 'download (2).jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'b-com commerce', '2020', 'nagpur', NULL, '2022-05-02 05:29:52', '2022-05-12 07:08:11'),
+(3, '2', '2', '676606', 'aky', '--', 'ramteke', '1', '06/17/1987', '34', '5', 'Nagpur', 'akky', '6:24 AM', 'akky@gmail.com', '9645969607', 'manglik_no', '4', 'mahar', 'marathi', 'bodh', '--', 'india', '5', 'Nagpur', '1651582584.webp', '1651582584.webp', '1651582584.webp', 'slim', 'fair', '47', '5 fit', 'good', 'ab+', 'no', 'no', NULL, '2020', NULL, NULL, '2022-05-03 07:26:24', '2022-05-03 07:29:58'),
+(4, '2', '3', '107647', 'akshay', '--', 'ramteke', '1', '07/19/1996', '25', '5', 'Nagpur', 'akky', '5:30 PM', 'aramteke103@gmail.com', '9975439948', 'manglik_no', '4', 'mahar', 'marathi', 'mahar', 'i dont know', 'india', '5', 'Nagpur', '1652184100.jpg', '1652184100.jpg', '1652184100.jpg', 'medium', 'medium', '50', '5 ft', NULL, NULL, NULL, NULL, NULL, '2020', NULL, NULL, '2022-05-10 06:31:40', '2022-05-10 06:31:40'),
+(5, '2', '4', '693952', 'amit', 'ramteke', 'ramteke', '1', '06/14/1985', '36', '5', 'Nagpur', 'amit', NULL, 'ramtekea23@gmail.com', '9975439948', 'manglik_no', '4', 'mahar', 'marathi', NULL, NULL, 'india', '5', 'Nagpur', '1652186635.jpg', '1652186635.jpg', '1658463635.jpg', NULL, 'medium', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019', NULL, NULL, '2022-05-10 07:13:55', '2022-07-21 22:50:35'),
+(7, '2', '7', '231120', 'rushabh', '--', 'roy', '1', '05/16/1997', '24', '5', 'Nagpur', 'rushabh', '12:24 PM', NULL, '9975439948', 'manglik_yes', '4', 'mahar', 'marathi', 'mahar', 'i dont know', 'india', '2', 'Nagpur', '1652425080.jpg', '1652425080.jpg', 'pexels-photo-220453.webp', 'slim', 'medium', '50', '5 ft', 'good', 'ab+', 'no', 'no', 'm-com', '2020', 'nagbhid', '---', '2022-05-13 01:28:00', '2022-05-13 01:28:00'),
+(8, '2', '8', '743374', 'sameer', '--', 'routh', '1', '07/09/1998', '23', '5', 'lature', 'sameer', '2:10 PM', NULL, '9975439948', 'manglik_no', '4', 'mahar', 'marathi', 'mahar', 'i dont know', 'india', '3', 'Nagpur', '1652427746.jpg', '1652427746.jpg', 'download (3).jpg', 'slim', 'medium', '50', '5 ft', 'good', 'ab+', 'no', 'no', '--', '2019', NULL, NULL, '2022-05-13 02:12:26', '2022-05-13 02:13:02'),
+(9, '2', '10', '697612', 'sanket', '--', 'ramteke', '1', '04/16/1969', '53', '5', 'nagpur', 'sanket', '4:31 PM', 'sanket23@gmail.com', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1655982144.jpg', '1655982144.jpg', 'download.jpg', 'slim', 'fair', '45kg', '5fit', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-23 05:32:24', '2022-06-23 05:32:24'),
+(10, '2', '11', '442397', 'sanket', '--', 'ramteke', '1', '06/12/1997', '25', '5', NULL, NULL, '1:23 PM', 'rahul@gmailcom', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1656417277.jpg', '1656417277.jpg', 'download (2).jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-06-28 06:24:37', '2022-06-28 06:24:37'),
+(12, '2', '14', '593665', 'prem', '--', 'premdass', '1', '05/20/1971', '51', '5', 'nagpur', 'sanket', '1:43 PM', 'pram@gmail.com', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1656418442.jpg', '1656418442.jpg', 'download.jpg', 'slim', 'fair', '45kg', '5fit', 'good', 'ab+', 'no', 'no', 'm-com', '2019', 'nagpur', 'teacher', '2022-06-28 06:44:02', '2022-06-28 06:44:02'),
+(13, '2', '15', '981305', 'harish', '--', 'bagade', '1', '06/12/1997', '25', '5', 'nagpur', 'harish', '1:40 AM', 'harish@gmail.com', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', '---', 'india', '5', 'nagpur', '1657793776.jpg', '1657793776.jpg', 'download (1).jpg', 'medium', 'fair', '45kg', '5fit', 'good', 'ab+', 'no', 'no', 'm-com', '2019', 'nagpur', 'teacher', '2022-07-14 04:46:16', '2022-07-14 04:46:16'),
+(15, '2', '17', '192513', 'rohit', '--', 'srivastav', '1', '11/03/1993', '28', '5', 'nagpur', 'rohit', '12:30 PM', 'rohit@gmail.com', '9545969607', 'manglik_no', '4', 'buddha', 'marathi', '--', NULL, 'india', '5', 'nagpur', '1658304080.jpg', '1658304080.jpg', '1658304334.jpg', 'medium', 'fair', '45kg', '5fit', 'good', 'ab+', 'no', 'no', 'm-com', '2019', 'nagpur', 'teacher', '2022-07-20 02:31:20', '2022-07-20 02:35:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `marital_status`
+--
+
+CREATE TABLE `marital_status` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `marital_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `marital_status`
+--
+
+INSERT INTO `marital_status` (`id`, `marital_status`, `created_at`, `updated_at`) VALUES
+(1, 'Single', '2022-05-02 03:15:05', '2022-05-02 03:15:05'),
+(2, 'Devorced', '2022-05-02 03:15:14', '2022-05-02 03:15:14'),
+(3, 'Devorced && Kind', '2022-05-02 03:15:24', '2022-05-02 03:15:24'),
+(4, 'Widowed', '2022-05-02 03:15:30', '2022-05-02 03:15:30'),
+(5, 'Widowed && Kind', '2022-05-02 03:15:36', '2022-05-02 03:15:36'),
+(6, 'Married', '2022-05-02 03:15:41', '2022-05-02 03:15:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(14, '2014_10_12_000000_create_users_table', 1),
+(15, '2019_08_19_000000_create_failed_jobs_table', 1),
+(16, '2022_04_08_065407_create_grooms_tbl_table', 1),
+(17, '2022_04_08_070119_create_brides_tbl_table', 1),
+(18, '2022_04_16_063328_create_marital_status_table', 1),
+(19, '2022_04_16_071214_create_states_table', 1),
+(20, '2022_04_16_075406_create_religions_table', 1),
+(21, '2022_04_16_125751_create_bride_profile_tbl_table', 1),
+(22, '2022_04_16_130915_create_groom_profile_tbl_table', 1),
+(23, '2022_04_23_090724_create_recently_view_profile_table', 1),
+(24, '2022_04_26_104237_create_uploade_images', 1),
+(25, '2022_04_29_110950_create_proposal_request', 1),
+(26, '2022_05_02_051439_create_genders', 1),
+(27, '2022_05_13_131153_create_admin_profile', 2),
+(28, '2022_06_21_999999_add_active_status_to_users', 3),
+(29, '2022_06_21_999999_add_avatar_to_users', 3),
+(30, '2022_06_21_999999_add_dark_mode_to_users', 3),
+(31, '2022_06_21_999999_add_messenger_color_to_users', 3),
+(32, '2022_06_21_999999_create_favorites_table', 3),
+(33, '2022_06_21_999999_create_messages_table', 3),
+(34, '2022_06_23_082508_add_name_to_user_table', 4),
+(35, '2022_06_23_115902_add_profile_to_users_table', 5),
+(36, '2022_06_28_071611_create_cover_profiles_table', 6),
+(37, '2022_07_01_071133_create_family_details_table', 7),
+(38, '2022_07_01_103543_create_patner_preference_table', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patner_preference`
+--
+
+CREATE TABLE `patner_preference` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bride_groom_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bride_groom_role` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `age` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `complexion` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `height` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cast` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `education` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `occupation` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `religion_id` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `patner_preference`
+--
+
+INSERT INTO `patner_preference` (`id`, `bride_groom_id`, `bride_groom_role`, `age`, `marital_status_id`, `complexion`, `height`, `cast`, `state_id`, `education`, `occupation`, `religion_id`, `created_at`, `updated_at`) VALUES
+(1, '1', '3', '25fe', '2', 'fair', '5fit', 'buddha', '1', 'm-com', 'teacher', '1', '2022-07-15 08:43:08', '2022-07-15 08:55:48'),
+(2, '5', '2', '25', '2', 'fair', '5fit', 'buddha', '1', 'b-com', 'teacherdsd', '2', '2022-07-15 08:44:55', '2022-07-20 01:01:31'),
+(3, '18', '3', '25', '1', 'fair', '5fit', 'buddha', '5', 'm-com', 'teacher', '3', '2022-07-16 03:05:10', '2022-07-16 03:23:16'),
+(4, '15', '2', '25', '1', 'fair', '5fit', 'buddha', '5', 'b-com', 'teacher', '4', '2022-07-20 03:59:18', '2022-07-20 03:59:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proposal_request`
+--
+
+CREATE TABLE `proposal_request` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `proposed_by_groom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'groom',
+  `proposed_by_bride` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride',
+  `proposed_by_role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride 3; Groom 2',
+  `proposed_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Groom; Bride',
+  `proposed_to_role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride 3; Groom 2',
+  `proposel_status` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'True:1 \r\nFalse:0 Not Request',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `proposal_request`
+--
+
+INSERT INTO `proposal_request` (`id`, `proposed_by_groom`, `proposed_by_bride`, `proposed_by_role`, `proposed_to`, `proposed_to_role`, `proposel_status`, `created_at`, `updated_at`) VALUES
+(2, '5', NULL, '2', '1', '3', '1', '2022-07-16 05:20:38', '2022-07-16 06:18:27'),
+(3, '5', NULL, '2', '2', '3', '0', '2022-07-20 00:37:53', '2022-07-20 00:37:53'),
+(4, '5', NULL, '2', '14', '3', '0', '2022-07-20 00:59:50', '2022-07-20 00:59:50'),
+(5, NULL, '1', '3', '15', '2', '1', '2022-07-20 06:27:52', '2022-07-20 06:27:52'),
+(6, '5', NULL, '2', '19', '3', '0', '2022-07-21 07:27:42', '2022-07-21 07:27:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recently_view_profile`
+--
+
+CREATE TABLE `recently_view_profile` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `visitor_user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Who View Profile',
+  `visitor_role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `visited_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride & groom Id',
+  `visited_role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 Groom; 3:Bride',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `recently_view_profile`
+--
+
+INSERT INTO `recently_view_profile` (`id`, `visitor_user_id`, `visitor_role`, `visited_id`, `visited_role`, `created_at`, `updated_at`) VALUES
+(1, '1', '3', '5', '2', '2022-06-24 08:46:47', '2022-06-24 08:46:47'),
+(2, '5', '2', '1', '3', '2022-06-24 08:48:40', '2022-06-24 08:48:40'),
+(3, '5', '2', '1', '3', '2022-06-24 23:23:06', '2022-06-24 23:23:06'),
+(4, '1', '3', '5', '2', '2022-06-26 22:58:28', '2022-06-26 22:58:28'),
+(5, '1', '3', '2', '2', '2022-06-26 23:02:44', '2022-06-26 23:02:44'),
+(6, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:47:56', '2022-06-26 23:47:56'),
+(7, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:52:45', '2022-06-26 23:52:45'),
+(8, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:53:01', '2022-06-26 23:53:01'),
+(9, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:53:02', '2022-06-26 23:53:02'),
+(10, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:53:02', '2022-06-26 23:53:02'),
+(11, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:53:03', '2022-06-26 23:53:03'),
+(12, '5', '2', 'hidden_id', 'hidden_role', '2022-06-26 23:53:03', '2022-06-26 23:53:03'),
+(13, '5', '2', '5', '3', '2022-06-27 00:51:34', '2022-06-27 00:51:34'),
+(14, '5', '2', '1', '3', '2022-06-27 00:52:17', '2022-06-27 00:52:17'),
+(15, '5', '2', '1', '3', '2022-06-27 01:27:34', '2022-06-27 01:27:34'),
+(16, '5', '2', '1', '3', '2022-06-27 01:28:40', '2022-06-27 01:28:40'),
+(17, '5', '2', '2', '2', '2022-06-27 01:37:42', '2022-06-27 01:37:42'),
+(18, '5', '2', '1', '3', '2022-06-27 01:42:45', '2022-06-27 01:42:45'),
+(19, '5', '2', '1', '3', '2022-06-27 01:43:25', '2022-06-27 01:43:25'),
+(20, '5', '2', '1', '3', '2022-06-27 01:49:39', '2022-06-27 01:49:39'),
+(21, '5', '2', '1', '3', '2022-06-27 01:52:15', '2022-06-27 01:52:15'),
+(22, '5', '2', '1', '3', '2022-06-27 01:52:40', '2022-06-27 01:52:40'),
+(23, '5', '2', '2', '3', '2022-06-27 02:00:32', '2022-06-27 02:00:32'),
+(24, '5', '2', '1', '3', '2022-06-27 02:23:58', '2022-06-27 02:23:58'),
+(25, '1', '3', '5', '2', '2022-06-27 03:18:19', '2022-06-27 03:18:19'),
+(26, '1', '3', '7', '2', '2022-06-27 03:35:14', '2022-06-27 03:35:14'),
+(27, '1', '3', '2', '2', '2022-06-27 03:38:44', '2022-06-27 03:38:44'),
+(28, '5', '2', '1', '3', '2022-06-27 04:15:16', '2022-06-27 04:15:16'),
+(29, '5', '2', '1', '3', '2022-06-27 04:32:29', '2022-06-27 04:32:29'),
+(30, '5', '2', '1', '3', '2022-06-27 04:42:36', '2022-06-27 04:42:36'),
+(31, '5', '2', '1', '3', '2022-06-27 04:42:47', '2022-06-27 04:42:47'),
+(32, '5', '2', '1', '3', '2022-06-27 04:52:10', '2022-06-27 04:52:10'),
+(33, '5', '2', '1', '3', '2022-06-27 06:14:41', '2022-06-27 06:14:41'),
+(34, '5', '2', '1', '3', '2022-06-27 06:33:41', '2022-06-27 06:33:41'),
+(35, '5', '2', '2', '3', '2022-06-27 06:48:20', '2022-06-27 06:48:20'),
+(36, '5', '2', '2', '3', '2022-06-27 06:54:09', '2022-06-27 06:54:09'),
+(37, '1', '3', '8', '2', '2022-06-27 07:01:45', '2022-06-27 07:01:45'),
+(38, '5', '2', '1', '3', '2022-06-27 07:11:37', '2022-06-27 07:11:37'),
+(39, '5', '2', '1', '3', '2022-06-27 08:21:37', '2022-06-27 08:21:37'),
+(40, '5', '2', '1', '3', '2022-06-27 22:49:24', '2022-06-27 22:49:24'),
+(41, '5', '2', '1', '3', '2022-06-28 03:12:31', '2022-06-28 03:12:31'),
+(42, '5', '2', '1', '3', '2022-06-28 04:15:05', '2022-06-28 04:15:05'),
+(43, '5', '2', '1', '3', '2022-06-28 04:24:09', '2022-06-28 04:24:09'),
+(44, '5', '2', '1', '3', '2022-06-28 04:25:19', '2022-06-28 04:25:19'),
+(45, '1', '3', '5', '2', '2022-06-28 04:27:11', '2022-06-28 04:27:11'),
+(46, '5', '2', '1', '3', '2022-06-28 04:29:34', '2022-06-28 04:29:34'),
+(47, '5', '2', '1', '3', '2022-06-28 05:06:49', '2022-06-28 05:06:49'),
+(48, '5', '2', '1', '3', '2022-06-28 05:11:38', '2022-06-28 05:11:38'),
+(49, '5', '2', '1', '3', '2022-06-29 00:55:17', '2022-06-29 00:55:17'),
+(50, '5', '2', '1', '3', '2022-06-29 02:53:42', '2022-06-29 02:53:42'),
+(51, '5', '2', '8', '3', '2022-06-29 03:00:12', '2022-06-29 03:00:12'),
+(52, '5', '2', '3', '3', '2022-06-29 06:15:42', '2022-06-29 06:15:42'),
+(53, '5', '2', '1', '3', '2022-06-29 07:15:37', '2022-06-29 07:15:37'),
+(54, '5', '2', '1', '3', '2022-06-29 07:16:03', '2022-06-29 07:16:03'),
+(55, '1', '3', '5', '2', '2022-06-30 00:41:00', '2022-06-30 00:41:00'),
+(56, '1', '3', '2', '2', '2022-06-30 04:37:00', '2022-06-30 04:37:00'),
+(57, '5', '2', '1', '3', '2022-07-13 23:24:14', '2022-07-13 23:24:14'),
+(58, '5', '2', '1', '3', '2022-07-13 23:25:32', '2022-07-13 23:25:32'),
+(59, '5', '2', '1', '3', '2022-07-13 23:27:09', '2022-07-13 23:27:09'),
+(60, '5', '2', '1', '3', '2022-07-13 23:27:32', '2022-07-13 23:27:32'),
+(61, '13', '2', '1', '3', '2022-07-14 04:58:21', '2022-07-14 04:58:21'),
+(62, '5', '2', '1', '3', '2022-07-15 05:51:16', '2022-07-15 05:51:16'),
+(63, '5', '2', '1', '3', '2022-07-16 03:38:34', '2022-07-16 03:38:34'),
+(64, '18', '3', '2', '2', '2022-07-16 04:54:20', '2022-07-16 04:54:20'),
+(65, '1', '3', '5', '2', '2022-07-16 05:18:52', '2022-07-16 05:18:52'),
+(66, '5', '2', '1', '3', '2022-07-16 05:45:43', '2022-07-16 05:45:43'),
+(67, '5', '2', '1', '3', '2022-07-16 05:46:31', '2022-07-16 05:46:31'),
+(68, '5', '2', '1', '3', '2022-07-16 06:17:50', '2022-07-16 06:17:50'),
+(69, '5', '2', '1', '3', '2022-07-18 23:26:34', '2022-07-18 23:26:34'),
+(70, '5', '2', '1', '3', '2022-07-19 02:58:03', '2022-07-19 02:58:03'),
+(71, '5', '2', '1', '3', '2022-07-19 08:52:00', '2022-07-19 08:52:00'),
+(72, '5', '2', '1', '3', '2022-07-19 23:41:07', '2022-07-19 23:41:07'),
+(73, '5', '2', '1', '3', '2022-07-20 00:02:02', '2022-07-20 00:02:02'),
+(74, '5', '2', '1', '3', '2022-07-20 00:46:02', '2022-07-20 00:46:02'),
+(75, '5', '2', '1', '3', '2022-07-20 00:47:55', '2022-07-20 00:47:55'),
+(76, '5', '2', '1', '3', '2022-07-20 02:09:40', '2022-07-20 02:09:40'),
+(77, '15', '2', '19', '3', '2022-07-20 05:25:15', '2022-07-20 05:25:15'),
+(78, '1', '3', '15', '2', '2022-07-20 06:28:10', '2022-07-20 06:28:10'),
+(79, '15', '2', '1', '3', '2022-07-20 06:28:50', '2022-07-20 06:28:50'),
+(80, '15', '2', '1', '3', '2022-07-20 06:46:31', '2022-07-20 06:46:31'),
+(81, '15', '2', '1', '3', '2022-07-20 07:47:08', '2022-07-20 07:47:08'),
+(82, '15', '2', '1', '3', '2022-07-20 07:48:54', '2022-07-20 07:48:54'),
+(83, '15', '2', '1', '3', '2022-07-20 07:49:22', '2022-07-20 07:49:22'),
+(84, '15', '2', '1', '3', '2022-07-20 07:50:34', '2022-07-20 07:50:34'),
+(85, '15', '2', '1', '3', '2022-07-20 07:50:55', '2022-07-20 07:50:55'),
+(86, '15', '2', '1', '3', '2022-07-20 07:51:12', '2022-07-20 07:51:12'),
+(87, '15', '2', '1', '3', '2022-07-20 07:51:35', '2022-07-20 07:51:35'),
+(88, '15', '2', '1', '3', '2022-07-20 07:52:29', '2022-07-20 07:52:29'),
+(89, '15', '2', '1', '3', '2022-07-20 07:54:35', '2022-07-20 07:54:35'),
+(90, '15', '2', '1', '3', '2022-07-20 07:55:31', '2022-07-20 07:55:31'),
+(91, '15', '2', '1', '3', '2022-07-20 07:55:40', '2022-07-20 07:55:40'),
+(92, '15', '2', '1', '3', '2022-07-20 08:06:07', '2022-07-20 08:06:07'),
+(93, '15', '2', '1', '3', '2022-07-20 08:16:07', '2022-07-20 08:16:07'),
+(94, '15', '2', '1', '3', '2022-07-20 08:16:59', '2022-07-20 08:16:59'),
+(95, '15', '2', '1', '3', '2022-07-20 08:19:28', '2022-07-20 08:19:28'),
+(96, '15', '2', '1', '3', '2022-07-20 08:20:09', '2022-07-20 08:20:09'),
+(97, '15', '2', '1', '3', '2022-07-20 08:21:55', '2022-07-20 08:21:55'),
+(98, '15', '2', '1', '3', '2022-07-20 08:22:31', '2022-07-20 08:22:31'),
+(99, '15', '2', '1', '3', '2022-07-20 08:22:46', '2022-07-20 08:22:46'),
+(100, '15', '2', '1', '3', '2022-07-20 08:24:36', '2022-07-20 08:24:36'),
+(101, '15', '2', '1', '3', '2022-07-20 08:28:06', '2022-07-20 08:28:06'),
+(102, '15', '2', '1', '3', '2022-07-20 08:28:36', '2022-07-20 08:28:36'),
+(103, '15', '2', '1', '3', '2022-07-20 08:29:28', '2022-07-20 08:29:28'),
+(104, '15', '2', '1', '3', '2022-07-20 08:30:40', '2022-07-20 08:30:40'),
+(105, '15', '2', '1', '3', '2022-07-20 08:31:47', '2022-07-20 08:31:47'),
+(106, '15', '2', '1', '3', '2022-07-20 08:32:24', '2022-07-20 08:32:24'),
+(107, '15', '2', '1', '3', '2022-07-20 08:33:16', '2022-07-20 08:33:16'),
+(108, '1', '3', '2', '2', '2022-07-21 01:28:02', '2022-07-21 01:28:02'),
+(109, '1', '3', '2', '2', '2022-07-21 01:29:47', '2022-07-21 01:29:47'),
+(110, '1', '3', '2', '2', '2022-07-21 01:33:09', '2022-07-21 01:33:09'),
+(111, '1', '3', '2', '2', '2022-07-21 01:34:28', '2022-07-21 01:34:28'),
+(112, '1', '3', '2', '2', '2022-07-21 01:34:56', '2022-07-21 01:34:56'),
+(113, '1', '3', '2', '2', '2022-07-21 01:34:57', '2022-07-21 01:34:57'),
+(114, '1', '3', '2', '2', '2022-07-21 01:35:13', '2022-07-21 01:35:13'),
+(115, '1', '3', '2', '2', '2022-07-21 01:35:38', '2022-07-21 01:35:38'),
+(116, '1', '3', '2', '2', '2022-07-21 01:35:39', '2022-07-21 01:35:39'),
+(117, '1', '3', '2', '2', '2022-07-21 01:35:39', '2022-07-21 01:35:39'),
+(118, '1', '3', '2', '2', '2022-07-21 01:35:40', '2022-07-21 01:35:40'),
+(119, '1', '3', '2', '2', '2022-07-21 01:35:50', '2022-07-21 01:35:50'),
+(120, '1', '3', '2', '2', '2022-07-21 01:38:51', '2022-07-21 01:38:51'),
+(121, '1', '3', '2', '2', '2022-07-21 01:39:11', '2022-07-21 01:39:11'),
+(122, '1', '3', '2', '2', '2022-07-21 01:39:50', '2022-07-21 01:39:50'),
+(123, '1', '3', '2', '2', '2022-07-21 01:41:16', '2022-07-21 01:41:16'),
+(124, '1', '3', '2', '2', '2022-07-21 01:41:33', '2022-07-21 01:41:33'),
+(125, '1', '3', '2', '2', '2022-07-21 01:42:05', '2022-07-21 01:42:05'),
+(126, '1', '3', '2', '2', '2022-07-21 01:42:07', '2022-07-21 01:42:07'),
+(127, '1', '3', '2', '2', '2022-07-21 01:42:07', '2022-07-21 01:42:07'),
+(128, '1', '3', '2', '2', '2022-07-21 01:42:16', '2022-07-21 01:42:16'),
+(129, '1', '3', '2', '2', '2022-07-21 01:43:49', '2022-07-21 01:43:49'),
+(130, '1', '3', '2', '2', '2022-07-21 01:44:06', '2022-07-21 01:44:06'),
+(131, '1', '3', '2', '2', '2022-07-21 01:45:00', '2022-07-21 01:45:00'),
+(132, '1', '3', '2', '2', '2022-07-21 01:45:26', '2022-07-21 01:45:26'),
+(133, '1', '3', '2', '2', '2022-07-21 01:48:13', '2022-07-21 01:48:13'),
+(134, '1', '3', '2', '2', '2022-07-21 01:48:55', '2022-07-21 01:48:55'),
+(135, '1', '3', '2', '2', '2022-07-21 01:49:42', '2022-07-21 01:49:42'),
+(136, '1', '3', '2', '2', '2022-07-21 01:50:03', '2022-07-21 01:50:03'),
+(137, '1', '3', '2', '2', '2022-07-21 02:11:09', '2022-07-21 02:11:09'),
+(138, '1', '3', '2', '2', '2022-07-21 02:20:52', '2022-07-21 02:20:52'),
+(139, '1', '3', '2', '2', '2022-07-21 02:22:02', '2022-07-21 02:22:02'),
+(140, '1', '3', '2', '2', '2022-07-21 02:22:43', '2022-07-21 02:22:43'),
+(141, '1', '3', '2', '2', '2022-07-21 02:24:08', '2022-07-21 02:24:08'),
+(142, '1', '3', '2', '2', '2022-07-21 02:25:51', '2022-07-21 02:25:51'),
+(143, '1', '3', '2', '2', '2022-07-21 02:27:26', '2022-07-21 02:27:26'),
+(144, '1', '3', '2', '2', '2022-07-21 02:30:14', '2022-07-21 02:30:14'),
+(145, '1', '3', '2', '2', '2022-07-21 02:30:52', '2022-07-21 02:30:52'),
+(146, '1', '3', '2', '2', '2022-07-21 02:35:30', '2022-07-21 02:35:30'),
+(147, '1', '3', '5', '2', '2022-07-21 02:37:41', '2022-07-21 02:37:41'),
+(148, '1', '3', '5', '2', '2022-07-21 02:37:53', '2022-07-21 02:37:53'),
+(149, '1', '3', '5', '2', '2022-07-21 02:38:12', '2022-07-21 02:38:12'),
+(150, '1', '3', '5', '2', '2022-07-21 02:38:12', '2022-07-21 02:38:12'),
+(151, '1', '3', '5', '2', '2022-07-21 02:39:19', '2022-07-21 02:39:19'),
+(152, '1', '3', '5', '2', '2022-07-21 02:39:35', '2022-07-21 02:39:35'),
+(153, '1', '3', '5', '2', '2022-07-21 02:42:46', '2022-07-21 02:42:46'),
+(154, '1', '3', '5', '2', '2022-07-21 02:44:39', '2022-07-21 02:44:39'),
+(155, '1', '3', '5', '2', '2022-07-21 02:47:01', '2022-07-21 02:47:01'),
+(156, '1', '3', '5', '2', '2022-07-21 02:48:21', '2022-07-21 02:48:21'),
+(157, '1', '3', '5', '2', '2022-07-21 02:51:23', '2022-07-21 02:51:23'),
+(158, '1', '3', '5', '2', '2022-07-21 02:52:14', '2022-07-21 02:52:14'),
+(159, '1', '3', '5', '2', '2022-07-21 02:54:08', '2022-07-21 02:54:08'),
+(160, '1', '3', '7', '2', '2022-07-21 02:57:47', '2022-07-21 02:57:47'),
+(161, '1', '3', '2', '2', '2022-07-21 02:58:09', '2022-07-21 02:58:09'),
+(162, '1', '3', '5', '2', '2022-07-21 03:00:45', '2022-07-21 03:00:45'),
+(163, '1', '3', '5', '2', '2022-07-21 03:11:19', '2022-07-21 03:11:19'),
+(164, '1', '3', '5', '2', '2022-07-21 03:11:55', '2022-07-21 03:11:55'),
+(165, '1', '3', '5', '2', '2022-07-21 03:15:14', '2022-07-21 03:15:14'),
+(166, '1', '3', '5', '2', '2022-07-21 03:25:00', '2022-07-21 03:25:00'),
+(167, '1', '3', '5', '2', '2022-07-21 03:26:43', '2022-07-21 03:26:43'),
+(168, '1', '3', '5', '2', '2022-07-21 03:29:12', '2022-07-21 03:29:12'),
+(169, '1', '3', '5', '2', '2022-07-21 03:29:41', '2022-07-21 03:29:41'),
+(170, '1', '3', '5', '2', '2022-07-21 03:30:22', '2022-07-21 03:30:22'),
+(171, '1', '3', '5', '2', '2022-07-21 03:32:15', '2022-07-21 03:32:15'),
+(172, '1', '3', '5', '2', '2022-07-21 03:32:41', '2022-07-21 03:32:41'),
+(173, '1', '3', '5', '2', '2022-07-21 03:36:43', '2022-07-21 03:36:43'),
+(174, '1', '3', '5', '2', '2022-07-21 03:37:22', '2022-07-21 03:37:22'),
+(175, '1', '3', '5', '2', '2022-07-21 03:40:55', '2022-07-21 03:40:55'),
+(176, '1', '3', '5', '2', '2022-07-21 04:37:26', '2022-07-21 04:37:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration_brides_tbl`
+--
+
+CREATE TABLE `registration_brides_tbl` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `add_bride_groom_table_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Registration For',
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '3 bride',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `registration_brides_tbl`
+--
+
+INSERT INTO `registration_brides_tbl` (`id`, `add_bride_groom_table_id`, `email`, `password`, `gender`, `role`, `created_at`, `updated_at`) VALUES
+(1, '2', 'sonali@gmail.com', '$2y$10$dQCsC6oVhkj2Mp2N8jxwGe9PI0jdOT2ViSmBV2QpnSnQQNBDYbym2', 'female', '3', '2022-05-02 05:32:31', '2022-05-02 05:32:31'),
+(2, '2', 'amrapali@gmail.com', '$2y$10$xAtRH2kgfo0USGi1Gxg3ju/Y2zjjVKrqKTfvtQLeGQ43D3awb5kyO', 'female', '3', '2022-05-03 04:16:36', '2022-05-03 04:16:36'),
+(3, '2', 'ruchali@gmail.com', '$2y$10$6vvLqF2oFqj85zFMkAJHlOIEm8BCN5OIvzywFCyVjQd6IHJSPeD6e', 'female', '3', '2022-05-13 02:57:00', '2022-05-13 02:57:00'),
+(4, '2', 'harshitakarlekar29@gmail.com', '$2y$10$N4LIGvNltKoOS8f7q8.s..R1F85BFzf0rkzX44hsy9dgc2eE.exWG', 'female', '3', '2022-06-28 04:38:33', '2022-06-28 04:38:33'),
+(5, '2', 'harshitakarlekar298@gmail.com', '$2y$10$j8jYM17SoZdd1csWKjBAPe6ExSF.Ti8QvRVgifwlp3Grc75ySpftW', 'female', '3', '2022-06-28 04:39:28', '2022-06-28 04:39:28'),
+(6, '2', 'harshita@gmail.com', '$2y$10$GodJ0Q5q53a24vO2Ialf0.XAU5s/rj.g26qhkK4IlOEVJfq/JkFYu', 'female', '3', '2022-07-14 01:31:46', '2022-07-14 01:31:46'),
+(7, '4', 'kajal@gmail.com', '$2y$10$M/g1S/XBkxubwwY7M5933eJNlvG3Gy3H2okGNRAPtdS.ie1Vpgdsu', 'female', '3', '2022-07-16 02:07:33', '2022-07-16 02:07:33'),
+(8, '2', 'ruchita@gmail.com', '$2y$10$ESNpnFzWZRFSpKGiqy.KaeY7G7OEh0ZpKfWFYs53Bgc4e9fa00P1q', 'female', '3', '2022-07-17 23:02:08', '2022-07-17 23:02:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration_grooms_tbl`
+--
+
+CREATE TABLE `registration_grooms_tbl` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `add_bride_groom_table_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Registration For ',
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 groom',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `registration_grooms_tbl`
+--
+
+INSERT INTO `registration_grooms_tbl` (`id`, `add_bride_groom_table_id`, `email`, `password`, `gender`, `role`, `created_at`, `updated_at`) VALUES
+(1, '1', 'amit@gmail.com', '$2y$10$HdN5qDjEyHHOksoZW.TEPe6gdau7LHEEJU0vp8jfT11ko2lPl7VcK', 'male', '2', '2022-05-02 03:14:18', '2022-05-02 03:14:18'),
+(2, '1', 'akky@gmail.com', '$2y$10$KQmuO9buF1sRYaTqycIvQ.HccZ4VHZKdI9amiFa0V1asq276HuVyu', 'male', '2', '2022-05-03 07:15:58', '2022-05-03 07:15:58'),
+(3, '1', 'aramteke103@gmail.com', '$2y$10$6gC26BlGFVxPwhGt47SzLO9a31VgiEWglX3uFhlrTG3KzIwATMpgq', 'male', '2', '2022-05-10 06:15:32', '2022-05-10 06:15:32'),
+(4, '1', 'ramtekea23@gmail.com', '$2y$10$31e8d6wM/mm3/aychLeRjuUYkOZy6nk6sLN2fta2elMXZtyyLgXJm', 'male', '2', '2022-05-10 07:10:23', '2022-05-10 07:10:23'),
+(5, '1', 'swity@gmail.com', '$2y$10$wIWD9dF/dCaSK2Md17.c5OY9CIkfxhfXpB6szIxTvurYdnAzEeQgO', 'male', '2', '2022-05-12 05:26:23', '2022-05-12 05:26:23'),
+(6, '1', 'swity@gmail.com', '$2y$10$qSG1743FQV6jS0SxzwOWoOTNuiQ1pfaaK2wE2UEFRz5.Z4wdOBPGe', 'male', '2', '2022-05-12 23:48:04', '2022-05-12 23:48:04'),
+(7, '1', 'rushbh@gmail.com', '$2y$10$NRXzKcuhs6eYrm14Rd/dJ.Pvw8hma62xSPys1BRvMS73t4BDn9zRC', 'male', '2', '2022-05-13 01:19:00', '2022-05-13 01:19:00'),
+(8, '1', 'sameer@gmail.com', '$2y$10$ECKrnJQ/pp28MFO8ejpQi.Hz7KUNVe0iZTdvYwCCPOlJzkaaK/Giy', 'male', '2', '2022-05-13 02:07:54', '2022-05-13 02:07:54'),
+(9, '1', 'sanket23@gmail.com', '$2y$10$r8TvE8Wiz/rSWDtKAm5o7OG65LOqXStjm8vKjl/Rl1GTEiiZW5ONa', 'male', '2', '2022-06-23 02:43:45', '2022-06-23 02:43:45'),
+(10, '1', 'sanket23@gmail.com', '$2y$10$ejTGmo.cdfTdJI.7oZxyd.hLEHrQ9NQ0Gixtc6gtT8Liwx6/OkzHW', 'male', '2', '2022-06-23 03:00:02', '2022-06-23 03:00:02'),
+(11, '1', 'rahul@gmailcom', '$2y$10$u9Ff9t2/tLlZ8HPyo1nTWuIvow9Nmu1SJM2VVIY28n4xiTIPBvham', 'male', '2', '2022-06-28 05:27:31', '2022-06-28 05:27:31'),
+(12, '1', 'sanket2653@gmailcom', '$2y$10$g..XkH24nfOq3Dj0cmwYJuSN1WI/GTYgcaNQCyB4S8ztRDGiTEKyq', 'male', '2', '2022-06-28 05:39:06', '2022-06-28 05:39:06'),
+(13, '1', 'pram@gmail.com', '$2y$10$UeON6y0qoUlkWArN4roeueFPXit/CR23648/YcF3byYzIYMgokAre', 'male', '2', '2022-06-28 06:32:16', '2022-06-28 06:32:16'),
+(14, '1', 'pram@gmail.com', '$2y$10$51pGLVAT85HYMz5m8d1gVeW7PKu9H1jbaZQiOKidhOTNK9PqGy4X2', 'male', '2', '2022-06-28 06:42:41', '2022-06-28 06:42:41'),
+(15, '5', 'harish@gmail.com', '$2y$10$rPjcjR06XxhCns6xGdm8feIpkkOUL6CHk2iix8.6yRou8PTKWKiPS', 'male', '2', '2022-07-14 04:39:39', '2022-07-14 04:39:39'),
+(16, '1', 'suny@gmail.com', '$2y$10$x4eHxKUG5.uA/RRELFgMbOqJpOmpCrPnw7.XTjGMsh.jaOdoCgVHK', 'male', '2', '2022-07-17 23:19:48', '2022-07-17 23:19:48'),
+(17, '1', 'rohit@gmail.com', '$2y$10$f2oke.Ica/A.LuYXdMLMSuc1xq7Ht7IZAGOW/fvY5EgL8Ukv/SZI.', 'male', '2', '2022-07-20 02:19:36', '2022-07-20 02:19:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `religions`
+--
+
+CREATE TABLE `religions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `religion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `religions`
+--
+
+INSERT INTO `religions` (`id`, `religion`, `created_at`, `updated_at`) VALUES
+(1, 'Christians', '2022-05-02 03:16:29', '2022-05-02 03:16:29'),
+(2, 'Muslims', '2022-05-02 03:16:35', '2022-05-02 03:16:35'),
+(3, 'Hindus', '2022-05-02 03:16:43', '2022-05-02 03:16:43'),
+(4, 'Buddhists', '2022-05-02 03:16:56', '2022-05-02 03:16:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `states`
+--
+
+CREATE TABLE `states` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `states`
+--
+
+INSERT INTO `states` (`id`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'Andhra Pradesh', '2022-05-02 03:15:52', '2022-05-02 03:15:52'),
+(2, 'Arunachal Pradesh', '2022-05-02 03:15:58', '2022-05-02 03:15:58'),
+(3, 'Assam', '2022-05-02 03:16:05', '2022-05-02 03:16:05'),
+(4, 'Bihar', '2022-05-02 03:16:10', '2022-05-02 03:16:10'),
+(5, 'Maharashtra', '2022-05-02 03:16:19', '2022-05-02 03:16:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploaded`
+--
+
+CREATE TABLE `uploaded` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bride_groom_profile_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bride_groom_profile_role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '2 Groom; 3:Bride',
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride & groom ',
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Bride & groom ',
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `uploaded`
+--
+
+INSERT INTO `uploaded` (`id`, `bride_groom_profile_id`, `user_tbl_id`, `bride_groom_profile_role`, `first_name`, `last_name`, `profile_image`, `created_at`, `updated_at`) VALUES
+(1, '5', '7', '2', 'amit', 'ramteke', 'download (2).jpg', '2022-07-19 08:32:42', '2022-07-19 08:32:42'),
+(2, '5', '7', '2', 'amit', 'ramteke', 'download (3).jpg', '2022-07-20 01:59:59', '2022-07-20 01:59:59'),
+(4, '15', '26', '2', 'rohit', 'srivastav', 'download (1).jpg', '2022-07-20 06:26:38', '2022-07-20 06:26:38'),
+(5, '1', '3', '3', 'sonali hg', 'routh', 'download (2).jpg', '2022-07-21 05:47:16', '2022-07-21 05:47:16'),
+(6, '5', '7', '2', 'amit', 'ramteke', 'download (4).jpg', '2022-07-21 22:51:02', '2022-07-21 22:51:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reg_groom_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reg_bride_tbl_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '1 SuperAdmin, 2 Groom, 3 Bride',
+  `bride_profile_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `groom_profile_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `active_status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `profile` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'avatar.png',
+  `dark_mode` tinyint(1) NOT NULL DEFAULT 0,
+  `messenger_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '#2180f3'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `show_password`, `reg_groom_tbl_id`, `reg_bride_tbl_id`, `role`, `bride_profile_id`, `groom_profile_id`, `remember_token`, `updated_at`, `active_status`, `created_at`, `profile`, `avatar`, `dark_mode`, `messenger_color`) VALUES
+(1, NULL, 'superadmin@gmail.com ', '$2y$10$evsTqnEyvqLd1MFDfYiFC.ZLhTL6TUoIU2xS7cqzx4uRCoj1egmWy', 'password', NULL, NULL, '1', NULL, NULL, NULL, NULL, 0, NULL, NULL, 'avatar.png', 0, '#2180f3'),
+(2, 'amu', 'amit@gmail.com', '$2y$10$lT0g7UAul9sLoCAQaj0av.dkb418TzXoOj.XUJj0e9AH3ihTULMCe', 'password', '1', NULL, '2', NULL, '631090', NULL, '2022-06-24 05:19:13', 1, '2022-05-02 03:14:18', NULL, 'avatar.png', 0, '#2180f3'),
+(3, 'sonali hg', 'sonali@gmail.com', '$2y$10$ldRXonwWcGpsRZinF/rOA.NSd.NaZXkR2r113gWaCH8C3/6SlXxru', 'password', NULL, '1', '3', '887251', NULL, NULL, '2022-06-30 04:26:10', 1, '2022-05-02 05:32:31', '1656582657.jpg', '4369e28e-a6af-4208-88b4-f227dcfe71b9.jpg', 0, '#673AB7'),
+(4, 'amrapali', 'amrapali@gmail.com', '$2y$10$QWBLrxI7/xRvegQ9C078QO6l4o93Pj7.OfJSYsDmhztuc7gbIqAny', 'password', NULL, '2', '3', '539306', NULL, NULL, '2022-06-24 02:23:38', 0, '2022-05-03 04:16:36', 'download (2).jpg', 'avatar.png', 0, '#2180f3'),
+(5, NULL, 'akky@gmail.com', '$2y$10$L4aVJZzRODUketEi97eA8u5aaI4Ps8/qhO22/ScyqR4Su8mMW.7oG', 'password', '2', NULL, '2', NULL, '676606', NULL, '2022-05-03 07:26:24', 0, '2022-05-03 07:15:58', NULL, 'avatar.png', 0, '#2180f3'),
+(6, NULL, 'aramteke103@gmail.com', '$2y$10$LE6.TyG4um8KYZG/TjrHJOOGdG/.bVvOwsUrbjEsehbnx6F3peduy', 'password', '3', NULL, '2', NULL, '107647', NULL, '2022-05-10 06:31:40', 0, '2022-05-10 06:15:32', NULL, 'avatar.png', 0, '#2180f3'),
+(7, 'amit', 'ramtekea23@gmail.com', '$2y$10$Jqporb7JoGUEm1Rsd9Fs6ugNHcrTMvP3gbn1COufN4Ys/ml/uowYi', 'password', '4', NULL, '2', NULL, '693952', NULL, '2022-07-22 00:27:29', 0, '2022-05-10 07:10:23', '1658463635.jpg', '23d722e4-25dc-4a75-8201-b9cae6ad4210.jpg', 0, '#9C27B0'),
+(9, NULL, 'swity@gmail.com', '$2y$10$IvPL9RDz71/aSKQRk99XVOrz7OqbAGHYk.ezIXb7qsa9E28OSGRwu', 'password', '6', NULL, '2', NULL, NULL, NULL, '2022-05-12 23:48:04', 0, '2022-05-12 23:48:04', NULL, 'avatar.png', 0, '#2180f3'),
+(10, NULL, 'rushbh@gmail.com', '$2y$10$Dm9YIKXG6gA5lObTKJr1sOyDcX59zxLBYziYoprVeNtV84YHr6C7e', 'password', '7', NULL, '2', NULL, '231120', NULL, '2022-05-13 01:28:00', 0, '2022-05-13 01:19:00', NULL, 'avatar.png', 0, '#2180f3'),
+(12, 'ruchali', 'ruchali@gmail.com', '$2y$10$m7X1QpRBhcCB2JfYaPJ.1ubHELs5evh.N55MUCZM/FBkcYaGvod.2', 'password', NULL, '3', '3', NULL, NULL, NULL, '2022-05-13 02:57:00', 0, '2022-05-13 02:57:00', NULL, 'avatar.png', 0, '#2180f3'),
+(14, 'sanket', 'sanket23@gmail.com', '$2y$10$7bHoPLtmE8uxfo58h9gqDekGWpzOQdBXSGyk85gHmmjGM25IkVLY2', 'password', '10', NULL, '2', NULL, '697612', NULL, '2022-06-23 05:32:24', 0, '2022-06-23 03:00:02', NULL, 'avatar.png', 0, '#2180f3'),
+(17, 'sanket', 'rahul@gmailcom', '$2y$10$.U2Kxeb55/K0y/HzHJNq9.XWrjuV5RlVY6sE8IFLsuoZSUVSQFkYe', 'password', '11', NULL, '2', NULL, '442397', NULL, '2022-06-28 06:24:37', 0, '2022-06-28 05:27:31', NULL, 'avatar.png', 0, '#2180f3'),
+(20, 'prem', 'pram@gmail.com', '$2y$10$Tj1tgeI7yqKVG9XRDqimOedADewWFkgeNpeYdH6iwf4yr/GR1ZIxC', 'password', '14', NULL, '2', NULL, '593665', NULL, '2022-06-28 06:44:02', 0, '2022-06-28 06:42:41', 'download.jpg', 'avatar.png', 0, '#2180f3'),
+(21, 'harshita', 'harshita@gmail.com', '$2y$10$Ew.VNn6R8PvQS.UPlpkANOvdjsYH1QME.qIQZGIenQf1UoPrLpawK', 'password', NULL, '6', '3', '662380', '', NULL, '2022-07-14 02:02:54', 0, '2022-07-14 01:31:46', 'download (2).jpg', 'avatar.png', 0, '#2180f3'),
+(22, 'harish', 'harish@gmail.com', '$2y$10$qcQhH07iUp2zUDlTzf7cMO7WhhKShcFy90JipG2K0kTYIeldvts3a', 'password', '15', NULL, '2', NULL, '981305', NULL, '2022-07-14 04:46:16', 0, '2022-07-14 04:39:39', 'download (1).jpg', 'avatar.png', 0, '#2180f3'),
+(23, 'kajal', 'kajal@gmail.com', '$2y$10$siBk3n5UryP.e7ZPKumrBueXwz4hG3PxuiiXEyGAkJk7ZHb3aWRaC', 'password', NULL, '7', '3', '104520', NULL, NULL, '2022-07-16 03:28:54', 0, '2022-07-16 02:07:33', 'download (5).jpg', 'avatar.png', 0, '#2180f3'),
+(24, 'ruchita', 'ruchita@gmail.com', '$2y$10$5P1kApLpXRQ5aFCPnlA/AOFXhXOg7EPOTDrjHY1ut8BjEQkbHvyl2', 'password', NULL, '8', '3', '287146', NULL, NULL, '2022-07-18 02:15:18', 0, '2022-07-17 23:02:08', '1658130227.jpg', 'avatar.png', 0, '#2180f3'),
+(25, NULL, 'suny@gmail.com', '$2y$10$qwBms8k8JyaQ4ECLORz5z.4tzOLOd9fAeNjyzHYclQtvC/Ycn.4Q2', 'password', '16', NULL, '2', NULL, NULL, NULL, '2022-07-17 23:19:49', 0, '2022-07-17 23:19:49', NULL, 'avatar.png', 0, '#2180f3'),
+(26, 'rohit', 'rohit@gmail.com', '$2y$10$pIvVojjJmzSL6jLyLYcNN.Tks0EKfoIJGPvNf0c/QlIsDnt7IGJJ2', 'password', '17', NULL, '2', NULL, '192513', NULL, '2022-07-20 02:35:34', 0, '2022-07-20 02:19:36', '1658304334.jpg', 'avatar.png', 0, '#2180f3');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bride_profile_tbl`
+--
+ALTER TABLE `bride_profile_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ch_favorites`
+--
+ALTER TABLE `ch_favorites`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ch_messages`
+--
+ALTER TABLE `ch_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cover_profiles`
+--
+ALTER TABLE `cover_profiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `family_details`
+--
+ALTER TABLE `family_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `genders`
+--
+ALTER TABLE `genders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `groom_profile_tbl`
+--
+ALTER TABLE `groom_profile_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `marital_status`
+--
+ALTER TABLE `marital_status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `patner_preference`
+--
+ALTER TABLE `patner_preference`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `proposal_request`
+--
+ALTER TABLE `proposal_request`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `recently_view_profile`
+--
+ALTER TABLE `recently_view_profile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registration_brides_tbl`
+--
+ALTER TABLE `registration_brides_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registration_grooms_tbl`
+--
+ALTER TABLE `registration_grooms_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `religions`
+--
+ALTER TABLE `religions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `states`
+--
+ALTER TABLE `states`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `uploaded`
+--
+ALTER TABLE `uploaded`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `bride_profile_tbl`
+--
+ALTER TABLE `bride_profile_tbl`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `cover_profiles`
+--
+ALTER TABLE `cover_profiles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `family_details`
+--
+ALTER TABLE `family_details`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `genders`
+--
+ALTER TABLE `genders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `groom_profile_tbl`
+--
+ALTER TABLE `groom_profile_tbl`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `marital_status`
+--
+ALTER TABLE `marital_status`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `patner_preference`
+--
+ALTER TABLE `patner_preference`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `proposal_request`
+--
+ALTER TABLE `proposal_request`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `recently_view_profile`
+--
+ALTER TABLE `recently_view_profile`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+
+--
+-- AUTO_INCREMENT for table `registration_brides_tbl`
+--
+ALTER TABLE `registration_brides_tbl`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `registration_grooms_tbl`
+--
+ALTER TABLE `registration_grooms_tbl`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `religions`
+--
+ALTER TABLE `religions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `states`
+--
+ALTER TABLE `states`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `uploaded`
+--
+ALTER TABLE `uploaded`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

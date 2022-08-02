@@ -16,12 +16,12 @@
 	          </ul>
 	       </div>
 	      @endif
-		<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#myModal">Fill Marital Status</a>
+		<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#maritalStatus">Add Marital Status</a>
 	</div>
 	<!-- Start Marital Status Table ----------->
     <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Marital Status</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -30,7 +30,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>Bride Groom</th>
-                                <!-- <th>Delete</th> -->
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +39,7 @@
                             <tr>
                             	<th>{{$i}}</th>
                                 <th>{{$value->marital_status}}</th>
+                                <th><a href="{{route('destroy_marital_status',['id'=>$value->id])}}" onclick="return confirm('Are You Sure Destroy This Marital Status?')" class='fa fa-trash'></a></th>
                             </tr>
                                @php $i++ @endphp 
                             @endforeach
@@ -49,8 +50,8 @@
             </div>
         </div>
 	<!--------- End Marital Status Table --------->
-	<!--Start  Bright Groom Modal -->
-	<div class="modal" id="myModal">
+	<!--Start  marital_Status Modal -->
+	<div class="modal" id="maritalStatus">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<!-- Modal Header -->
@@ -70,9 +71,6 @@
 						<div class="checkbox">
 						  <label><input type="checkbox" name="remember"> Remember me</label>
 						</div>
-						<!-- </form> -->
-						<!-- </div> -->
-						<!-- Modal footer -->
 						<div class="modal-footer">
 						  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
@@ -83,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End bootsrap model -->
+	<!-- End marital_Status model -->
 </div>
 	<!-- End of Main Content -->
 @stop

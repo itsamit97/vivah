@@ -68,12 +68,12 @@
                             {{csrf_field()}}
                             <div class="form-group"> 
                               <label for="first_name">First Name:</label>
-                              <input type="text" class="form-control" id="first_name" placeholder="Enter Marital Status" name="first_name">
+                              <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="first_name">
                             </div>
 
                             <div class="form-group"> 
-                              <label for="last_name">Name:</label>
-                              <input type="text" class="form-control" id="last_name" placeholder="Enter Marital Status" name="last_name">
+                              <label for="last_name">Last Name:</label>
+                              <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name" name="last_name">
                             </div>
 
                             <div class="form-group"> 
@@ -120,13 +120,24 @@
                             <div class="form-group"> 
                               <label for="last_name">Last Name:</label>
                               <input type="text" class="form-control" id="e_last_name" placeholder="Enter Last Name" name="last_name">
-                              
+                            </div>
+
+                            <div class="form-group"> 
+                              <label for="last_name">Email:</label>
+                              <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
+                            </div>
+
+                            <div class="form-group"> 
+                              <label for="last_name">Password:</label>
+                              <input type="text" class="form-control" id="e_password" placeholder="Enter Password" name="password">
                             </div>
 
                             <div class="form-group"> 
                               <label for="profile">Profile:</label>
                               <input type="file" class="form-control" id="e_profile" name="profile" >
+                              @if(isset($value))
                               <img src="{{asset('profiles/'.$value->profile)}}" style="height: 40px;width:40px; border-radius:50%" />
+                              @endif
                             </div>
                             <div class="form-group"> 
                               <input type="hidden" class="form-control" id="e_hidden_id"  name="admin_profile_id">
@@ -148,10 +159,15 @@
 
 	<script type="text/javascript">
 		function UpdateSelfProfile(value){
+            // console.log(value);
+               $("#email").val(value.email); 
+            $("#e_password").val(value.show_password);
 			$("#e_hidden_id").val(value.id);
 			$("#e_first_name").val(value.first_name);
 			$("#e_last_name").val(value.last_name);
 			$("#e_profile").val(value.profile); 
+          
+
 		}
 	</script>
 

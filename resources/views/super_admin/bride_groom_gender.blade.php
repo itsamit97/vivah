@@ -16,12 +16,12 @@
                   </ul>
                </div>
               @endif
-			<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#myModal">Bright Groom Fill</a>
+			<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  data-toggle="modal" data-target="#myModal">Add Gender</a>
 		</div>
-		<!-- Start Bride Groom Table ----------->
+		<!-- Start Bride Groom Gender Table ----------->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary"> Bride Groom Gender</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -31,7 +31,7 @@
                                 <th>id</th>
                                 <th>Bride Groom</th>
                                 <th>Gender</th>
-                                <!-- <th>Delete</th> -->
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,6 +41,7 @@
                             	<th>{{$i}}</th>
                                 <th>{{$value->bride_groom}}</th>
                                 <th>{{$value->gender}}</th>
+                                <th><a href="{{route('destroy_bride_groom_gender',['id'=>$value->id])}}" onclick="return confirm('Are You Sure Destroy This  Bride Groom Genders?')" class='fa fa-trash'></a></th>
                             </tr>
                                @php $i++ @endphp 
                             @endforeach
@@ -50,14 +51,14 @@
                 </div>
             </div>
         </div>
-		<!--------- End Bride Groom Table --------->
+		<!--------- End Bright Groom Gender Table --------->
 		<!--Start  Bright Groom Modal -->
 		<div class="modal" id="myModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<!-- Modal Header -->
 					<div class="modal-header">
-						<h4 class="modal-title">Bride Groom</h4>
+						<h4 class="modal-title">Bride Groom Gender</h4>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<!-- Modal body -->
@@ -88,7 +89,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- End bootsrap model -->
+		<!-- End  Bright Groom Gender model -->
 	</div>
 	<!-- End of Main Content -->
 @stop

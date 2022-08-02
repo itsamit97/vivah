@@ -999,7 +999,8 @@ form label {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  padding: 7em 0;
+  /*padding: 7em 0;*/
+  padding: 3em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1171,7 +1172,7 @@ form label {
 }
 
 .fh5co-heading {
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;
@@ -1653,7 +1654,7 @@ form label {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
-  border-radius: 30px;
+  border-radius: 9px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;

@@ -86,11 +86,12 @@
           autoplaySpeed:1000,
         });
 
+// toaster.success('testing msg');
   
 
 			// start animate_image
 		    $(".animate_image").mouseenter(function(){
-		      $(this).css("background-color","#6a1914");
+		      $(this).css("background-color","#c32143");
 		    });
 		    
 		    $(".animate_image").mouseleave(function(){
@@ -111,30 +112,26 @@
 				    // alert("You are " + years + " years old!");
 				  });
 				});
-
-			
-
-				// $("#alert_login_id").click(function(){
-				// 	console.log(Auth::User());
-				// 	 if (Auth::User() !=null){
-		  // 				   return redirect()->route('self_profile');
-		  // 			}else{
-		  // 					alert("Login Registration First");
-		  // 			}
-				// });
-
-
-				// $("#proposal_request").click(function(){
-			 //    $("#cancel_request").show();
-			 //  });
-
-
-			
 	});
 			// end animate_image
 
 			// start hide msg 
   $('#self_profile_msg').hide(3000);
+
+
+
+  // new add datepicker
+            $(function() {
+              $('input[name="wedding_year"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'),10)
+              }, function(start, end, label) {
+                var years = moment().diff(start, 'years');
+                alert("You're wedding"+" " + years + " years completed!");
+              });
+            });
 
 
 

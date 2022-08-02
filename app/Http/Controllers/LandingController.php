@@ -10,13 +10,18 @@ use Auth;
 use Mail;
 use App\Mail\contact_mail;
 use Redirect;
+use App\SuccessCouple;
+use App\User;
+use App\Riview;
 class LandingController extends Controller
 {
     public function webIndex()
     {
         $maritalStatusTableData  = MaritalStatus::get();
         $statesTableData  = StateModel::get();
-        return view('landing_web/index',['maritalStatusTableData'=>$maritalStatusTableData,'statesTableData'=>$statesTableData]);
+        $successCouple = SuccessCouple::get();
+        $riviewSucessCouple = Riview::get();
+        return view('landing_web/index',['maritalStatusTableData'=>$maritalStatusTableData,'statesTableData'=>$statesTableData,'successCouple'=>$successCouple,'riviewSucessCouple'=>$riviewSucessCouple]);
     }
 
     public function About(){
@@ -70,13 +75,53 @@ class LandingController extends Controller
     }
 
 
+    public function introOneVivah(){
+
+        return view ('landing_web/intro_one_vivah');
+    }
+
+    public function Review(){
+        $loginPprofile = User::where('id',Auth::User()->id)->select('profile','name')->first();
+        // dd($loginPprofile);
+        $riviewTableData = Riview::get();
+        return view('landing_web/review',['loginPprofile'=>$loginPprofile,'riviewTableData'=>$riviewTableData]);
+    }
 
 
-function LogutBrideGroom(){
+    public function riviewOneVivah(Request $request){
+        // dd($request->input('bride_name'));
 
-     Auth::logout();
-  return redirect('login');
-}
+       //  $couple_profile = time().'.'.$request->file->extension();  
+       //  $request->file->move(public_path('couple_profile'), $ProfileName);
+
+       // $coupleprofile =  $request->couple_profile;
+       //   $request->couple_profile->move(public_path('couple_rofile'), $coupleprofile);
+
+        if ($request->hasFile('image_profile')){
+           $successCoupleImg = time().'.'.$request->image_profile->extension();  
+            $request->image_profile->move(public_path('success_couple_profiles'), $successCoupleImg);
+        }
+
+
+        $riviewTable = new Riview;
+        $riviewTable->bride_name = $request->input('bride_name');
+        $riviewTable->groom_name = $request->input('groom_name');
+        $riviewTable->comment = $request->input('comment');
+        $riviewTable->married = $request->input('married');
+        $riviewTable->unmarried = $request->input('unmarried');
+        $riviewTable->image_profile = $successCoupleImg;
+         $riviewTable->save();
+         return json_encode(['msg'=>'success',$riviewTable]);
+
+    }
+
+
+
+    function LogutBrideGroom(){
+
+         Auth::logout();
+      return redirect('login');
+    }
 
 
 

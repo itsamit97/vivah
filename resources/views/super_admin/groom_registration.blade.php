@@ -5,12 +5,12 @@
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800">{{ucwords(str_replace("_", " ",request()->segment(count(request()->segments()))))}}</h1>
 	</div>
-	<!-- Start Bride Registration Table && Search -Search Email Bar---------->
+	<!-- Start Groom Registration Table && Search -Search Email Bar---------->
     <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <div class="row">
                     <div class="col-sm-6">
-                         <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                         <h6 class="m-0 font-weight-bold text-primary">Groom Registration</h6>
                     </div>
                     <div class="col-sm-5" style="text-align:right">
                         <form action="{{route('search')}}" method="post">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-	<!--------- End Bride Registration Table --------->
+	<!--------- End Groom Registration Table --------->
 </div>
 	<!-- End of Main Content -->
 @stop

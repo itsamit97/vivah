@@ -10,7 +10,7 @@
             <div class="card-header py-3">
                 <div class="row">
                     <div class="col-sm-6">
-                         <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                         <h6 class="m-0 font-weight-bold text-primary">Bride Registration </h6>
                     </div>
                     <div class="col-sm-5" style="text-align:right">
                         <form action="{{route('bride_search')}}" method="post">

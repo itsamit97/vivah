@@ -25,6 +25,24 @@
                   @if($errors->any())
                   <h4 id="self_profile_msg">{{$errors->first()}}</h4>
                   @endif
+
+
+                    <h4 style="color: rgb(237, 47, 89);">
+                    <i class="fa fa-edit"></i>&nbsp;Self Introduce</h4>
+                      <!--  start first row -->
+                    <div class="row">
+                      <div class="col-sm-6 "><label for="first_name">Self Introduce :</label> 
+
+                          <textarea rows="4" cols="50" class="form-control" name="self_introduce" id="self_introduce"  placeholder="Enter Introduce Your Self">
+                        Enter Introduce Your Self..</textarea>
+                        <!--<input type="text" class="form-control"name="first_name" id="first_name" placeholder="Enter First Name "> -->
+                      </div>
+                      <div class="col-sm-6">
+                      </div>
+                    </div>
+
+                    <br>
+
                       <h4 style="color: rgb(237, 47, 89);">
                     <i class="fa fa-edit"></i>&nbsp;Personal Information</h4>
                       <!--  start first row -->
@@ -78,8 +96,10 @@
 
                         <div class="col-sm-6">
                           <lable for="mobile_no"><b>Mobile No:</b></lable>
-                          <input type="text" class="form-control" name="mobile_no"placeholder="Enter Mobile No" />
+                          <input type="text" class="form-control" name="mobile_no" id="mobile_no" placeholder="Enter Mobile No" />
+                          <p id="alert_msg"></p>
                         </div>
+                        
                         <!-- <input type="text" id="timepicker"/> -->
                     </div>
 
@@ -198,21 +218,44 @@
                       <div class="col-sm-3"><lable for="height"><b>Height:</b></lable><input type="text" class="form-control" name="height"placeholder="Ex.  5 Ft 7 In" />
                      </div>
 
-                     <div class="col-sm-3"><lable for="physical_status"><b>Physical Status:</b></lable><input type="text" class="form-control" name="physical_status"placeholder="Physical Status" />
+                     <div class="col-sm-3"><lable for="physical_status"><b>Physically challenged:</b></lable><input type="text" class="form-control" name="physical_status"placeholder="Yes or No" />
                      </div>
 
-                       <div class="col-sm-3"><lable for="blood_group"><b>Blood Group:</b></lable><input type="text" class="form-control" name="blood_group"placeholder="Blood Group" />
+                        <!--      <div class="col-sm-3"><lable for="blood_group"><b>Blood Group:</b></lable><input type="text" class="form-control" name="blood_group"placeholder="Blood Group" />
+                           </div>
+                           -->
+
+                      <div class="col-sm-3 ">
+                          <div class="age_box1">
+                            <lable for="country"><b>Blood Group:</b></lable>
+                              <select type="text" class="form-control" name="blood_group" required>
+                                <option value="">* Select </option>
+                                @foreach($bloodGroupTableData as $key=>$value)
+                                  <option value="{{$value->id}}">{{$value->blood_group}}</option>
+                                @endforeach
+                              </select>
+                         </div>
                      </div>
 
-                       <div class="col-sm-3"><lable for="drink"><b>Drink:</b></lable><input type="text" class="form-control" name="drink"placeholder="Yes & No" />
+                   <!--    <div class="col-sm-3"><lable for="drink"><b>Drink:</b></lable><input type="text" class="form-control" name="drink"placeholder="Yes || No || Occasionally" />
                      </div>
-
+                    -->
                       <div class="col-sm-3"><lable for="smoke "><b>Smoke :</b></lable><input type="text" class="form-control" name="smoke"placeholder="Smoke " />
                      </div>
 
                       <div class="col-sm-3"><lable for="age"><b>Age:</b></lable><input type="text" class="form-control" name="age" id="age" placeholder="Age" />
                      </div>
-                    
+                  </div>
+                  <br>
+                  <div class="row">   
+                      <label><b>Drink</b></label>
+                      <br>
+                      <input type="radio" id="drink1" name="drink[]" value="yes">
+                      <label for="drink1"> Yes</label><br>
+                      <input type="radio" id="drink2" name="drink[]" value="no">
+                      <label for="drink2"> No</label><br>
+                      <input type="radio" id="drink3" name="drink[]" value="occasionally">
+                      <label for="drink3">Occasionally</label><br>
                   </div>
                   <br>
                     <div class="row">
@@ -222,26 +265,40 @@
                       <div class="col-sm-4"><lable for="highest_qualification"><b>Highest Qualification:</b></lable><input type="text" class="form-control" name="highest_qualification"placeholder="Highest Qualification" />
                      </div>
 
-                       <!-- <input type="text" name="year" id="datepicker1"/> -->
 
-                      <!--   <input type="text" class="form-control" name="datepicker" id="datepicker" /> -->
-
-
-                      <div class="col-sm-4"><lable for="passout"><b>Year of pass :</b></lable><input type="text" class="form-control" name="passout_year" id="passout_year" / placeholder="ear of pass ">
+                      <div class="col-sm-4"><lable for="passout"><b>Year of pass :</b></lable><input type="text" class="form-control" name="passout_year" id="passout_year" / placeholder="Year Of Pass ">
                      </div>
 
-                     <div class="col-sm-4"><lable for="height"><b>Education From:</b></lable><input type="text" class="form-control" name="studied_from" placeholder="tudied From">
+                     <div class="col-sm-4"><lable for="height"><b>Education From:</b></lable><input type="text" class="form-control" name="studied_from" placeholder="Studied From">
                      </div>
                   </div>
                     <br>
                    <div class="row">
                       <h4 style="color: rgb(237, 47, 89);">
                       <i class="fa fa-edit"></i>&nbsp;Occupation</h4>
-                      <div class="col-sm-4"><lable for="occupation"><b>Occupation:</b></lable><input type="text" class="form-control" name="occupation" placeholder="Occupation">
+                      <div class="col-sm-3"><lable for="occupation"><b>Occupation:</b></lable><input type="text" class="form-control" name="occupation" placeholder="Occupation Ex.Teacher,Engineer">
                       </div>
-                      <div class="col-sm-4" ><lable for="gotra"><b>submit All Details:</b></lable>
+                      
+                      <div class="col-sm-3"><lable for="occupation"><b>Employed In:</b></lable><input type="text" class="form-control" name="employed_in" placeholder="Business || Self Epmoyed">
+                      </div>
+
+                      <div class="col-sm-3"><lable for="occupation"><b>Annual Income:</b></lable><input type="text" class="form-control" name="annual_income" placeholder="Annual Income">
+                      </div>
+
+                       <div class="col-sm-3"><lable for="occupation"><b>Organization Name:</b></lable><input type="text" class="form-control" name="organization_name" placeholder="Organization Name">
+                      </div>
+                      
+                   
+                      <!--     <div class="col-sm-4" ><lable for="gotra"><b>submit All Details:</b></lable>
                        <input type="submit" class="hvr-wobble-vertical" type="submit">
-                    </div>
+                      </div> -->
+
+                   </div>
+                   <br>
+                   <div>
+                        <div class="col-sm-4" ><lable for="gotra"><b>submit All Details:</b></lable>
+                       <input type="submit" class="hvr-wobble-vertical" type="submit">
+                      </div>
 
                    </div>
 
@@ -329,25 +386,43 @@
 
       // <!-- time picker -->
       $('#timepicker').mdtimepicker({
-            // format of the time value (data-time attribute)
-            timeFormat: 'hh:mm:ss.000', 
+        // format of the time value (data-time attribute)
+        timeFormat: 'hh:mm:ss.000', 
 
-            // format of the input value
-            format: 'h:mm tt',      
+        // format of the input value
+        format: 'h:mm tt',      
 
-            // theme of the timepicker
-            // 'red', 'purple', 'indigo', 'teal', 'green', 'dark'
-            theme: 'blue',        
+        // theme of the timepicker
+        // 'red', 'purple', 'indigo', 'teal', 'green', 'dark'
+        theme: 'blue',        
 
-            // determines if input is readonly
-            readOnly: true,       
+        // determines if input is readonly
+        readOnly: true,       
 
-            // determines if display value has zero padding for hour value less than 10 (i.e. 05:30 PM); 24-hour format has padding by default
-            hourPadding: false,
+        // determines if display value has zero padding for hour value less than 10 (i.e. 05:30 PM); 24-hour format has padding by default
+        hourPadding: false,
 
-            // determines if clear button is visible  
-            clearBtn: false
-          }); 
+        // determines if clear button is visible  
+        clearBtn: false
+      }); 
+
+
+
+      // Mobile No Validation
+        $("#mobile_no").keyup(function(){
+          var mobNum = $("#mobile_no").val();
+            if(mobNum.length==10){
+              $("#alert_msg").html('Validate mobile number').css("color","green");
+            }else{
+              $("#alert_msg").html('Please put 10  digit mobile number').css("color","red");
+
+            }
+
+        });
+
+
+
+
     })
 </script>
 

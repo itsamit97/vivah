@@ -30,22 +30,23 @@
                             <tr>
                                 <th>id</th>
                                 <th>state</th>
-                                <!-- <th>Delete</th> -->
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                         	@php $i = 1 @endphp 
-                            @foreach($StatesTableData as $key=>$value)
+                            @foreach($statesTableData as $key=>$value)
                             <tr>
                             	<th>{{$i}}</th>
                                 <th>{{$value->state}}</th>
+                                <th><a href="{{route('destroy_state',['id'=>$value->id])}}" onclick="return confirm('Are You Sure Destroy This State?')" class='fa fa-trash'></a></th>
                             </tr>
                                @php $i++ @endphp 
                             @endforeach
                         
                         </tbody>
                     </table>
-                    {!! $StatesTableData->links() !!}
+                    {!! $statesTableData->links() !!}
                 </div>
             </div>
         </div>
