@@ -19,11 +19,13 @@ class CreateUsersTable extends Migration
             // $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->string('show_password')->nullable();
-            $table->string('reg_groom_tbl_id')->nullable();
-            $table->string('reg_bride_tbl_id')->nullable();
+            $table->string('registration_groom_tbl_id')->nullable();
+            $table->string('registration_bride_tbl_id')->nullable();
             $table->string('role')->nullable()->comment('1 SuperAdmin, 2 Groom, 3 Bride' );
             $table->string('bride_profile_id')->nullable();
              $table->string('groom_profile_id')->nullable();
+             $table->string('mobile_no')->nullable();
+             
 
 
             $table->rememberToken();

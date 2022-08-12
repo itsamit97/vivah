@@ -349,7 +349,7 @@
 <div class="grid_2">
 	<!-- <h2>Why Choose 1 Vivah</h2> -->
 	<center>
-		<label class="hvr-shutter-out-horizontal"><b>Why Choose 1 Vivah</b><br><lable style="font-size:20px;">1 vivah is different from other matchmaking sites because of some unique benefits that every parent will find highly useful
+		<label class="hvr-shutter-out-horizontal"><b>Why Choose 1 Vivah</b><br><lable style="font-size:15px;">1 vivah is different from other matchmaking sites because of some unique benefits that every parent will find highly useful
 			1 vivah.com is one of India’s leading matrimonial websites that has helped lakhs of members find their perfect life partner.
 
 			We believe choosing a life partner is a big and important decision, and hence work towards giving a simple and secure matchmaking experience for you and your family. Each profile registered with us goes through a manual screening process before going live on site; we provide superior privacy controls for Free; and also verify contact information of members.

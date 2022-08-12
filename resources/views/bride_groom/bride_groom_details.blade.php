@@ -946,7 +946,7 @@
 		}
 
 		function messanger() {
-			console.log('chack');
+			// console.log('chack');
 			window.location = "/chatify";
 		}
    </script>

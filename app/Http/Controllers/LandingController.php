@@ -13,10 +13,62 @@ use Redirect;
 use App\SuccessCouple;
 use App\User;
 use App\Riview;
+
+// use Request;
 class LandingController extends Controller
 {
+
+
+
+    // public function getClientIps()
+    // {
+    //     $clientIps = array();
+    //     $ip = $this->server->get('REMOTE_ADDR');
+    //     if (!$this->isFromTrustedProxy()) {
+    //         return array($ip);
+    //     }
+    //     if (self::$trustedHeaders[self::HEADER_FORWARDED] && $this->headers->has(self::$trustedHeaders[self::HEADER_FORWARDED])) {
+    //         $forwardedHeader = $this->headers->get(self::$trustedHeaders[self::HEADER_FORWARDED]);
+    //         preg_match_all('{(for)=("?\[?)([a-z0-9\.:_\-/]*)}', $forwardedHeader, $matches);
+    //         $clientIps = $matches[3];
+    //     } elseif (self::$trustedHeaders[self::HEADER_CLIENT_IP] && $this->headers->has(self::$trustedHeaders[self::HEADER_CLIENT_IP])) {
+    //         $clientIps = array_map('trim', explode(',', $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_IP])));
+    //     }
+    //     $clientIps[] = $ip; // Complete the IP chain with the IP the request actually came from
+    //     $ip = $clientIps[0]; // Fallback to this when the client IP falls into the range of trusted proxies
+    //     foreach ($clientIps as $key => $clientIp) {
+    //         // Remove port (unfortunately, it does happen)
+    //         if (preg_match('{((?:\d+\.){3}\d+)\:\d+}', $clientIp, $match)) {
+    //             $clientIps[$key] = $clientIp = $match[1];
+    //         }
+    //         if (IpUtils::checkIp($clientIp, self::$trustedProxies)) {
+    //             unset($clientIps[$key]);
+    //         }
+    //     }
+    //     // Now the IP chain contains only untrusted proxies and the client IP
+    //     return $clientIps ? array_reverse($clientIps) : array($ip);
+    // } 
+
+
     public function webIndex()
     {
+ 
+
+  // echo $request->ip();
+            // server ip
+
+          
+            // server ip
+
+            // echo $this->getIp(); //see the method below
+            // clent ip
+
+
+//         $ip = Request::ip();
+// dd('ip',ip);
+// dd('tets');
+
+
         $maritalStatusTableData  = MaritalStatus::get();
         $statesTableData  = StateModel::get();
         $successCouple = SuccessCouple::get();
@@ -81,7 +133,10 @@ class LandingController extends Controller
     }
 
     public function Review(){
-        $loginPprofile = User::where('id',Auth::User()->id)->select('profile','name')->first();
+        if (Auth::User() !=null) {
+           $loginPprofile = User::where('id',Auth::User()->id)->select('profile','name')->first();
+        }
+        $loginPprofile = '';
         // dd($loginPprofile);
         $riviewTableData = Riview::get();
         return view('landing_web/review',['loginPprofile'=>$loginPprofile,'riviewTableData'=>$riviewTableData]);
@@ -89,30 +144,28 @@ class LandingController extends Controller
 
 
     public function riviewOneVivah(Request $request){
-        // dd($request->input('bride_name'));
 
-       //  $couple_profile = time().'.'.$request->file->extension();  
-       //  $request->file->move(public_path('couple_profile'), $ProfileName);
+        if (Auth::User() !=null) {
 
-       // $coupleprofile =  $request->couple_profile;
-       //   $request->couple_profile->move(public_path('couple_rofile'), $coupleprofile);
+            if ($request->hasFile('image_profile')){
+               $successCoupleImg = time().'.'.$request->image_profile->extension();  
+                $request->image_profile->move(public_path('success_couple_profiles'), $successCoupleImg);
+            }
 
-        if ($request->hasFile('image_profile')){
-           $successCoupleImg = time().'.'.$request->image_profile->extension();  
-            $request->image_profile->move(public_path('success_couple_profiles'), $successCoupleImg);
+
+            $riviewTable = new Riview;
+            $riviewTable->bride_name = $request->input('bride_name');
+            $riviewTable->groom_name = $request->input('groom_name');
+            $riviewTable->comment = $request->input('comment');
+            $riviewTable->married = $request->input('married');
+            $riviewTable->unmarried = $request->input('unmarried');
+            $riviewTable->image_profile = $successCoupleImg;
+             $riviewTable->save();
+             return json_encode(['msg'=>'success',$riviewTable]);
+        }else{
+            dd('not login');
+            return json_encode(['msg'=>'Please Login First Befor Comment']);
         }
-
-
-        $riviewTable = new Riview;
-        $riviewTable->bride_name = $request->input('bride_name');
-        $riviewTable->groom_name = $request->input('groom_name');
-        $riviewTable->comment = $request->input('comment');
-        $riviewTable->married = $request->input('married');
-        $riviewTable->unmarried = $request->input('unmarried');
-        $riviewTable->image_profile = $successCoupleImg;
-         $riviewTable->save();
-         return json_encode(['msg'=>'success',$riviewTable]);
-
     }
 
 

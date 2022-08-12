@@ -13,6 +13,7 @@ use Auth;
 use Redirect;
 use App\BloodGroup;
 use App\SuccessCouple;
+use App\RegistrationBy;
 class SuperAdminController extends Controller
 {
     public function superAdminIndex (){
@@ -28,6 +29,76 @@ class SuperAdminController extends Controller
         $brideGroomGenders  = Gender::get();
        return view('super_admin/bride_groom_gender',['brideGroomGenders'=>$brideGroomGenders]);
     }
+
+
+
+// -------------------start new function -----------------------------
+    // new gender function 
+
+    public function genderTable(){
+        $genderData  = Gender::get();
+       return view('super_admin/gender',['genderData'=>$genderData]);
+    }
+
+        
+    public function  genderCreate(Request $request){
+        $this->validate($request,[
+         'gender'=>'required',
+        ]);
+        $genderTable = Gender::where('gender',$request->gender)->count();
+        $genderTable = new Gender;
+        $genderTable->gender = ucfirst($request->gender);
+        $genderTable->save();
+        return Redirect::back()->withErrors(['msg' => 'Succesfully']);
+    }
+
+       function destroyGender($id){
+        $destroyGender = Gender::find($id);
+        $destroyGender->delete();
+        // return redirect()->route('bride_groom');
+        return Redirect::back()->withErrors(['msg' => 'Deta Destroy Succesfully']);
+
+
+     }
+
+
+
+     public function registrationBy(){
+        $registrationByData = RegistrationBy::get();
+        return view ('super_admin/registration_by',['registrationByData'=>$registrationByData]);
+    }
+
+    public function registrationByCreate(Request $request){
+        $registrationByTable = new RegistrationBy;
+        $registrationByTable->registration_by = ucfirst($request->registration_by);
+        $registrationByTable->save();
+        return Redirect::back()->withErrors(['msg' => 'Success Registration By Succesfully']);
+
+
+    }
+
+    function destroyRegistrationBy($id){
+         $registrationBy =  RegistrationBy::find($id);
+         $registrationBy->delete();
+       return Redirect::back()->withErrors(['msg' => 'DestroyeRegistration By Succesfully']);
+
+
+    }
+
+
+// -------------------start new function -----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     public function  brideGroomCreate(Request $request){
@@ -214,8 +285,8 @@ class SuperAdminController extends Controller
                 $usersTable->role = 1;
                 $usersTable->save();
                  $notification = array(
-                    'message' => 'Please Fill Filter Box!',
-                    'alert-type' => 'warning'
+                    'message' => 'Please Login!',
+                    'alert-type' => 'success'
                 );
                 return redirect()->route('login')->with($notification);
             }
@@ -269,6 +340,42 @@ class SuperAdminController extends Controller
 
 
     }
+
+
+
+    // public function registrationBy(){
+    //     $registrationByData = RegistrationBy::get();
+    //     return view ('super_admin/registration_by',['registrationByData'=>$registrationByData]);
+    // }
+
+    // public function registrationByCreate(Request $request){
+    //     $registrationByTable = new RegistrationBy;
+    //     $registrationByTable->registration_by = ucfirst($request->registration_by);
+    //     $registrationByTable->save();
+    //     return Redirect::back()->withErrors(['msg' => 'Success Registration By Succesfully']);
+
+
+    // }
+
+    // function destroyRegistrationBy($id){
+    //      $registrationBy =  RegistrationBy::find($id);
+    //      $registrationBy->delete();
+    //    return Redirect::back()->withErrors(['msg' => 'DestroyeRegistration By Succesfully']);
+
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -201,7 +201,7 @@ class BrideGroomController extends Controller
                 ->leftjoin('registration_grooms_tbl','groom_profile_tbl.reg_groom_tbl_id','=','registration_grooms_tbl.id')
                 ->leftjoin('genders','registration_grooms_tbl.add_bride_groom_table_id','genders.id')
                 // ->leftjoin('uploaded ','groom_profile_tbl.id','=','uploaded .bride_groom_profile_id')
-                ->leftjoin('blood_groups','groom_profile_tbl.blood_group_tbl_id','=','blood_group.id')
+                ->leftjoin('blood_groups','groom_profile_tbl.blood_group_tbl_id','=','blood_groups.id')
                 ->where('groom_profile_tbl.role',Auth::User()->role)
                 ->where('groom_profile_tbl.groom_profile_id',Auth::User()->groom_profile_id)
                 ->select('groom_profile_tbl.*','marital_status.marital_status','states.state','religions.religion','genders.bride_groom','blood_groups.blood_group')
@@ -497,7 +497,6 @@ class BrideGroomController extends Controller
                 ->where('family_details.bride_groom_id',$groom_profile_id)
                 ->where('bride_groom_role',Auth::User()->role)
                 ->first();
-                // dd('patnerPreference',$patnerPreference);
 
             $maritalStatusTableData  = MaritalStatus::get();
             $statesTableData  = StateModel::get();
@@ -505,7 +504,6 @@ class BrideGroomController extends Controller
 
              return view('bride_groom/testing_profile',['friendsList'=>$friendsList,'brideGroomMatchDetails'=>$brideGroomMatchDetails,'coverProfile'=>$coverProfile,'brideGroomProfile'=>$brideGroomProfile,'partnerPreference'=>$partnerPreference,'familyDetails'=>$familyDetails,'maritalStatusTableData'=>$maritalStatusTableData,'religionTableData'=>$religionTableData]);
         }elseif(Auth::User() !=null && Auth::User()->role == 3){
-
             $bride_profile_id =  $this->getLogedInProfileId();
             // dd($bride_profile_id);
             $friendsList = ProposalRequest::leftjoin('groom_profile_tbl','proposal_request.proposed_to','=','groom_profile_tbl.id')
@@ -566,9 +564,9 @@ class BrideGroomController extends Controller
                 ->where('bride_groom_role',Auth::User()->role)
                 ->first();
 
-            $maritalStatusTableData  = MaritalStatus::get();
-            $statesTableData  = StateModel::get();
-            $religionTableData  = Religion::get();
+                $maritalStatusTableData  = MaritalStatus::get();
+                $statesTableData  = StateModel::get();
+                $religionTableData  = Religion::get();
 
                 return view('bride_groom/testing_profile',['friendsList'=>$friendsList,'brideGroomMatchDetails'=>$brideGroomMatchDetails,'coverProfile'=>$coverProfile,'brideGroomProfile'=>$brideGroomProfile,'partnerPreference'=>$partnerPreference,'familyDetails'=>$familyDetails,'maritalStatusTableData'=>$maritalStatusTableData,'religionTableData'=>$religionTableData]);
            }else{

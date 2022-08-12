@@ -278,11 +278,12 @@
                                               <a onClick="rejectRequest({{$value}})" class="photo_view reject_request{{$value->id}}">Reject Request</a>
                                             @endif
                                       </div>
-                                      <div class="thumb_but"><a  href="http://localhost:8000/chatify/" class="photo_view">Messenger</a>
+                                      <div class="thumb_but"><a  href="http://ivishesh.com/chatify/" class="photo_view">Messenger</a>
                                       </div>
                                       <div class="clearfix"> </div>
                                        @endforeach  
                                 </div>
+                                <!-- href="http://localhost:8000/chatify/" -->
                     </div>
                            
                 </div>

@@ -12,12 +12,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Start & All Registration Route Bride & Groom  & Super admin only Login
-	Route::get('login',['as'=>'login','uses'=>'RegistrationController@brideGroomLoginForm']);
-	Route::post('login',['as'=>'login','uses'=>'RegistrationController@brideGroomSuperAdminLogin']);
+// Start & All Registration Route Bride & Groom  & Super admin only Login old data comletly workin
+	// Route::get('login',['as'=>'login','uses'=>'RegistrationController@brideGroomLoginForm']);
+	// Route::post('login',['as'=>'login','uses'=>'RegistrationController@brideGroomSuperAdminLogin']);
+	// // Route::get('registration',['as'=>'registration','uses'=>'RegistrationController@brideGroomRegistration']);
+	// // Route::post('registration',['as'=>'registration','uses'=>'RegistrationController@brideGroomRegistrationCreate']);
+	// Route::get('get_gender_name/{id}',['as'=>'get_gender_name','uses'=>'RegistrationController@getGenderName']);
+
+	
+// Start Registration Field
+	//// Start & All Registration Route Bride & Groom  & Super admin only Login New Route New Beginning 
 	Route::get('registration',['as'=>'registration','uses'=>'RegistrationController@brideGroomRegistration']);
 	Route::post('registration',['as'=>'registration','uses'=>'RegistrationController@brideGroomRegistrationCreate']);
-	Route::get('get_gender_name/{id}',['as'=>'get_gender_name','uses'=>'RegistrationController@getGenderName']);
+	Route::get('login',['as'=>'login','uses'=>'RegistrationController@brideGroomLoginForm']);
+	Route::post('login',['as'=>'login','uses'=>'RegistrationController@brideGroomSuperAdminLogin']);
+	// confirm_email from registration
+
+	Route::post('confirm_email',['as'=>'confirm_email','uses'=>'RegistrationController@confirmEmail']);
+	Route::post('confirm_mobile_no',['as'=>'confirm_mobile_no','uses'=>'RegistrationController@confirmMobileNo']);
+
+
+
+	
+	Route::post('varification_otp',['as'=>'varification_otp','uses'=>'RegistrationController@varificationOtp']);
+	Route::get('forgot_password',['as'=>'forgot_password','uses'=>'RegistrationController@forgotPassword']);
+	Route::post('forgot_password',['as'=>'forgot_password','uses'=>'RegistrationController@forgotPasswordCreate']);
+	Route::get('reset_password/{email}',['as'=>'reset_password','uses'=>'RegistrationController@resetPassword']);
+	Route::get('set_password',['as'=>'set_password','uses'=>'RegistrationController@setPassword']);
+	Route::post('set_password',['as'=>'set_password','uses'=>'RegistrationController@setPasswordCreate']);
+
+// EndRegistration Field
+
+
+
+
+
 	// Service Provider
 	Route::get('service_provider_reg',['as'=>'service_provider_reg','uses'=>'RegistrationController@serviceProviderRegistration']);
 // End Bride & Groom  & All Registration Route  & Super admin Login
@@ -94,9 +123,29 @@ Route::group(['middleware'=>['super_adminb_middleware']],function(){
 
 	Route::get('super_admin/super_admin_index',['as'=>'super_admin_index','uses'=>'SuperAdminController@superAdminIndex']);
 	// new add bride_groom we can use get_gender_name in registration_table
+
+	// old code after remove
+
 	Route::get('super_admin/bride_groom',['as'=>'bride_groom','uses'=>'SuperAdminController@brideGroomGenderTable']);
 	Route::post('super_admin/bride_groom',['as'=>'bride_groom','uses'=>'SuperAdminController@brideGroomCreate']);
 	Route::get('super_admin/destroy_bride_groom_gender/{id}',['as'=>'destroy_bride_groom_gender','uses'=>'SuperAdminController@destroyBrideGroomGender']);
+	// old code after remove
+
+
+	// new route for gender && start new route
+	Route::get('super_admin/gender',['as'=>'gender','uses'=>'SuperAdminController@genderTable']);
+	Route::post('super_admin/gender',['as'=>'gender','uses'=>'SuperAdminController@genderCreate']);
+	Route::get('super_admin/destro_gender/{id}',['as'=>'destro_gender','uses'=>'SuperAdminController@destroyGender']);
+
+
+	Route::get('super_admin/registration_by',['as'=>'registration_by','uses'=>'SuperAdminController@registrationBy']);
+	Route::Post('super_admin/registration_by',['as'=>'registration_by','uses'=>'SuperAdminController@registrationByCreate']);
+	Route::get('super_admin/destroy_registration_by/{id}',['as'=>'destroy_registration_by','uses'=>'SuperAdminController@destroyRegistrationBy']);
+
+
+
+
+
 
 	Route::get('super_admin/marital_status',['as'=>'marital_status','uses'=>'SuperAdminController@maritalStatusTable']);
 	Route::post('super_admin/marital_status',['as'=>'marital_status','uses'=>'SuperAdminController@maritalStatusCreate']);
@@ -126,15 +175,18 @@ Route::group(['middleware'=>['super_adminb_middleware']],function(){
 	// Blood Group
 	Route::get('super_admin/blood_group',['as'=>'blood_group','uses'=>'SuperAdminController@bloodGroupTable']);
 	Route::Post('super_admin/blood_group',['as'=>'blood_group','uses'=>'SuperAdminController@bloodGroupCreate']);
+	Route::get('super_admin/destroy_blood_group/{id}',['as'=>'destroy_blood_group','uses'=>'SuperAdminController@destroyBloodGroup']);
 
 	Route::get('super_admin/success_couple',['as'=>'success_couple','uses'=>'SuperAdminController@successCoupleTable']);
 	Route::post('super_admin/success_couple',['as'=>'success_couple','uses'=>'SuperAdminController@successCoupleCreate']);
 	Route::get('super_admin/destroy_success_couple/{id}',['as'=>'destroy_success_couple','uses'=>'SuperAdminController@destroySuccessCouple']);
 
-
-	Route::get('super_admin/destroy_blood_group/{id}',['as'=>'destroy_blood_group','uses'=>'SuperAdminController@destroyBloodGroup']);
+	// Route::get('super_admin/registration_by',['as'=>'registration_by','uses'=>'SuperAdminController@registrationBy']);
+	// Route::Post('super_admin/registration_by',['as'=>'registration_by','uses'=>'SuperAdminController@registrationByCreate']);
+	// Route::get('super_admin/destroy_registration_by/{id}',['as'=>'destroy_registration_by','uses'=>'SuperAdminController@destroyRegistrationBy']);
 
 	Route::get('admin_logout',['as'=>'admin_logout','uses'=>'SuperAdminController@adminLogout']);
+
 
 
 	// Route::get('super_admin/destroy_bride_groom/{id}',['as'=>'destroy_bride_groom','uses'=>'SuperAdminController@destroyBrideGroom']);
@@ -148,7 +200,7 @@ Route::group(['middleware'=>['super_adminb_middleware']],function(){
 
 
 
-	// /super_admin password ink 
+	// /super_admin password automatic ink 
 	Route::get('super_admin',['as'=>'super_admin','uses'=>'SuperAdminController@superAdmin']);
 
 

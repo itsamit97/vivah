@@ -15,7 +15,8 @@
         "intervention/image": "^2.7",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "munafio/chatify": "^1.5"
+        "munafio/chatify": "^1.5",
+        "stevebauman/location": "^6.5"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

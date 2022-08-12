@@ -1055,6 +1055,63 @@ otherwise upload profile
 
 
 
+============02-08-2022===============
+
+1.create git hub && error solve
+2.upload project in gitHub
+
+3.upload img review page 
+4.add conment before chack bride groom login
+
+
+
+
+1.error problem user not login && click profile (solve)
+2.add images  && add comment in bride && groom 
+3 share information about slef & one vivah expirience 
+4.automkatic redirect add scroll img in dashboard Success couple img 
+5.create signup page & new design 
+5.login page & new design 
+6.
+
+
+
+============05-08-2022===============
+1.disscuss project 
+2.create gender tables in super admin pannel 
+3.error problem 
+4.add fields name
+5.add validation password missmatc confirm password
+6.mobile no validation 
+
+7.using jequery 
+
+1.apply cdn link 
+
+
+
+
+============06-08-2022===============
+1.remove all tabls in migration && migrate 
+2.add add fields 
+3.create genders table view &&  database
+4.migration error
+5.column error 
+6.solve issues all 
+
+
+1.create registration page add fields 
+2.create dynamic dropdown Registration For
+3.create dynamic dropdown Registration By
+4.add validation backend and front validation 
+5.add alert msg 
+6.if email alredy exits alert msg show
+7.mobile no validation 
+8.dynamic send registration msg in mail
+9.when create registration successfully send otp one type password 
+10.add otp password in login page after redirect home page
+11.testing program
+
 
 
 
@@ -1180,3 +1237,37 @@ password
 
 
 INSERT INTO `users` (`id`, `email`, `password`, `show_password`, `reg_groom_tbl_id`, `reg_bride_tbl_id`, `role`, `bride_profile_id`, `groom_profile_id`, `remember_token`, `created_at`, `updated_at`) VALUES ('1', 'superadmin@gmail.com ', '$2y$10$evsTqnEyvqLd1MFDfYiFC.ZLhTL6TUoIU2xS7cqzx4uRCoj1egmWy\r\n', 'password\r\n', NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL);
+
+
+
+
+
+
+
+
+
+
+ya  step follow kara lagel ka  (ho jevg)
+
+* Step for Git Hub 
+******************************************************
+
+1.push an existing repository from the command line
+2.git init (step 1)
+3.git remote add origin https://github.com/githamit/new_repository.git   (step 2)
+4.git branch -M main   (step 3)
+5.git add . (4rd step)
+6.git commit -am"comment tak ith" (5rd step)
+7.git push -u origin main (ata 6ri step)
+***************************************************
+
+
+=====================
+### to add new data to old git repository follow below steps
+### jari ka tujha project already ha
+1.git add . (1rd step)
+2.git commit -am"comment tak ith" (2rd step)
+3.git pull orign main (step 3)
+4.git push -u origin main (step 4)
+
+==================

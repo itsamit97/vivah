@@ -28,6 +28,16 @@
          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <!-- end start year picker cdn -->
 
+
+
+
+
+    <!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+
+
+
     <style type="text/css">
         thead{
             color:black;
@@ -56,10 +66,17 @@
 
              <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('bride_groom')}}">
+                <a class="nav-link" href="{{route('gender')}}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Add Bride Groom Table</span></a>
+                <span>Gender Table</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('registration_by')}}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Registration By Table</span></a>
+            </li>
+
+            
             <li class="nav-item">
                 <a class="nav-link" href="{{route('marital_status')}}">
                 <i class="fas fa-fw fa-table"></i>
